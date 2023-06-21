@@ -6,7 +6,7 @@ export default function PersonalInfo() {
     let info = { 
                 name: 'Victoria Macarena Gardella Ruiz',
                 age: 28,
-                DNI: '38.691.578',
+                dni: '38.691.578',
                 country: 'Argentinian',
             }
     
