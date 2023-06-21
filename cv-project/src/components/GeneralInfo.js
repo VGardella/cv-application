@@ -45,7 +45,9 @@ export default function PersonalInfo() {
     }
 
     function handleEdit(e) {
-
+        alert('Still working on it...');
+        setEditing(!isEditing);
+        alert('isEditing is ' + isEditing)
     }
 
     return (
@@ -53,9 +55,14 @@ export default function PersonalInfo() {
             <h1 class='principal-title'>Welcome to my Page!</h1>
             <hr/>
             { infoStructure }
-            <button onClick={handleEdit}>
+            {isEditing 
+            ? <button onClick={handleEdit}>
+                Save Information
+            </button>
+            : <button onClick={handleEdit}>
                 Edit Information
             </button>
+            }
         </div>
     );
 }
