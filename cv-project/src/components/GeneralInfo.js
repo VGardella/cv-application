@@ -28,10 +28,10 @@ export default function PersonalInfo() {
             </form>
         )
     } else {
-        infoStructure = (
-            //<b>Name: </b> {info.name}
+        // infoStructure = (
+        //     //<b>Name: </b> {info.name}
 
-        )
+        // )
     }
 
     function handleEdit(e) {
