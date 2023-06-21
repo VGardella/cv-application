@@ -1,4 +1,4 @@
-import useState from 'react';
+import { useState } from 'react';
 
 export default function PersonalInfo() {
     const [ isEditing, setEditing ] = useState(false);
@@ -28,10 +28,20 @@ export default function PersonalInfo() {
             </form>
         )
     } else {
-        // infoStructure = (
-        //     //<b>Name: </b> {info.name}
+        infoStructure = (
+            <div>
+                <b>Name: </b> {info.name}
+                <br/>
+                <b>Age: </b> {info.age}
+                <br/>
+                <b>DNI: </b> {info.dni}
+                <br/>
+                <b>Country: </b> {info.country}
+                <br/>
+            </div>
+            
 
-        // )
+        )
     }
 
     function handleEdit(e) {
@@ -42,7 +52,7 @@ export default function PersonalInfo() {
         <div class='principal'>
             <h1 class='principal-title'>Welcome to my Page!</h1>
             <hr/>
-            { infoStructure };
+            { infoStructure }
             <button onClick={handleEdit}>
                 Edit Information
             </button>
