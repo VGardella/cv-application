@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-export default function EducationalExperience() {
+// export default function EducationalExperience() {
     
-}
+// }
 
-export function FormalEducation() {
+export default function FormalEducation() {
     let edu = {
         bachelor: {
-            university: 'Universidad Nacional de La Plata',
+            university: 'Facultad de Ciencias Exactas, Universidad Nacional de La Plata',
             school: 'Facultad de Ciencias Exactas',
             career: 'Biotechnology and Molecular Biology',
             status: 'Complete',
@@ -26,40 +26,72 @@ export function FormalEducation() {
     const [ isEditing, setEditing ] = useState(false);
     const [ education, setEducation ] = useState(edu);
 
-    let infoStructure;
-    let newInfo = {};
+    let eduStructure;
+    let phdStructure;
+    let newEdu = {};
 
     if (isEditing) {
-        infoStructure = (
+        eduStructure = (
             <form class='cv-form'>
-                <label>Name: </label>
-                <input name='name' placeholder={personalInfo.name} onChange={handleInfo}></input>
+                <label>Career: </label>
+                <input name='career' placeholder={education.name} onChange={handleInfo}></input>
                 <br />
-                <label>Age: </label>
-                <input name='age' placeholder={personalInfo.age} onChange={handleInfo}></input>
+                <label>Institution: </label>
+                <input name='school' placeholder={education.school} onChange={handleInfo}></input>
+                , 
+                <input name='university' placeholder={education.university} onChange={handleInfo}></input>
                 <br />
-                <label>DNI: </label>
-                <input name='dni' placeholder={personalInfo.dni} onChange={handleInfo}></input>
+                <label>Status: </label>
+                <input name='status' placeholder={education.status} onChange={handleInfo}></input>
                 <br />
-                <label>Country: </label>
-                <input name='country' placeholder={personalInfo.country} onChange={handleInfo}></input>
+                <label>Duration: </label>
+                <input name='duration' placeholder={education.duration} onChange={handleInfo}></input>
             </form>
-        )
+        );
+        
+        phdStructure = (
+            <form class='cv-form'>
+                <label>Career: </label>
+                <input name='career' placeholder={education.name} onChange={handleInfo}></input>
+                <br />
+                <label>Institution: </label>
+                <input name='institute' placeholder={education.institute} onChange={handleInfo}></input>
+                 - 
+                <input name='university' placeholder={education.university} onChange={handleInfo}></input>
+                <br />
+                <label>Status: </label>
+                <input name='status' placeholder={education.status} onChange={handleInfo}></input>
+                <br />
+                <label>Duration: </label>
+                <input name='duration' placeholder={education.duration} onChange={handleInfo}></input>
+            </form>
+        );
     } else {
-        infoStructure = (
+        eduStructure = (
             <div>
-                <b>Name: </b> {personalInfo.name}
+                <b>Career: </b> {education.career}
                 <br/>
-                <b>Age: </b> {personalInfo.age}
+                <b>Institute: </b> {education.school}, {education.university}
                 <br/>
-                <b>DNI: </b> {personalInfo.dni}
+                <b>Status: </b> {education.status}
                 <br/>
-                <b>Country: </b> {personalInfo.country}
+                <b>Duration: </b> {education.duration}
                 <br/>
             </div>
-            
-
-        )
+        );
+        
+        phdStructure = (
+            <div>
+            <b>Career: </b> {education.career}
+            <br/>
+            <b>Institute: </b> {education.institute} - {education.university}
+            <br/>
+            <b>Status: </b> {education.status}
+            <br/>
+            <b>Duration: </b> {education.duration}
+            <br/>
+        </div>
+        );
     }
 
     function handleEdit(e) {
@@ -67,15 +99,15 @@ export function FormalEducation() {
     }
 
     function handleInfo(e) {
-        newInfo = {
-            ...personalInfo,
+        newEdu = {
+            ...education,
             [e.target.name]: e.target.value,
         };
     };
 
     function handleSave(e) {
         e.preventDefault();
-        setPersonalInfo(newInfo);
+        setEducation(newEdu);
         setEditing(false);
     }
     
