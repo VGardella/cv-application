@@ -52,7 +52,7 @@ export default function FormalEducation() {
         phdStructure = (
             <form class='cv-form'>
                 <label>Career: </label>
-                <input name='career' placeholder={education.phd.name} onChange={handleInfo}></input>
+                <input name='career' placeholder={education.phd.career} onChange={handleInfo}></input>
                 <br />
                 <label>Institution: </label>
                 <input name='institute' placeholder={education.phd.institute} onChange={handleInfo}></input>
