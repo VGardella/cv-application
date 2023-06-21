@@ -1,42 +1,45 @@
 import { useState } from 'react';
 
 export default function PersonalInfo() {
-    const [ isEditing, setEditing ] = useState(false);
-
     let info = { 
-                name: 'Victoria Macarena Gardella Ruiz',
-                age: 28,
-                dni: '38.691.578',
-                country: 'Argentinian',
-            }
+        name: 'Victoria Macarena Gardella Ruiz',
+        age: 28,
+        dni: '38.691.578',
+        country: 'Argentinian',
+    }
+
+    const [ isEditing, setEditing ] = useState(false);
+    const [ personalInfo, setPersonalInfo ] = useState(info);
     
     let infoStructure;
+    let newInfo = {};
+
     if (isEditing) {
         infoStructure = (
             <form class='cv-form'>
-                <label forHTML='name'>Name: </label>
-                <input id='name'></input>
+                <label>Name: </label>
+                <input name='name' placeholder={personalInfo.name} onChange={handleInfo}></input>
                 <br />
-                <label forHTML='age'>Age: </label>
-                <input id='age'></input>
+                <label>Age: </label>
+                <input name='age' placeholder={personalInfo.age} onChange={handleInfo}></input>
                 <br />
-                <label forHTML='dni'>DNI: </label>
-                <input id='dni'></input>
+                <label>DNI: </label>
+                <input name='dni' placeholder={personalInfo.dni} onChange={handleInfo}></input>
                 <br />
-                <label forHTML='country'>Country: </label>
-                <input id='country'></input>
+                <label>Country: </label>
+                <input name='country' placeholder={personalInfo.country} onChange={handleInfo}></input>
             </form>
         )
     } else {
         infoStructure = (
             <div>
-                <b>Name: </b> {info.name}
+                <b>Name: </b> {personalInfo.name}
                 <br/>
-                <b>Age: </b> {info.age}
+                <b>Age: </b> {personalInfo.age}
                 <br/>
-                <b>DNI: </b> {info.dni}
+                <b>DNI: </b> {personalInfo.dni}
                 <br/>
-                <b>Country: </b> {info.country}
+                <b>Country: </b> {personalInfo.country}
                 <br/>
             </div>
             
@@ -45,9 +48,20 @@ export default function PersonalInfo() {
     }
 
     function handleEdit(e) {
-        alert('Still working on it...');
-        setEditing(!isEditing);
-        alert('isEditing is ' + isEditing)
+        setEditing(true);
+    }
+
+    function handleInfo(e) {
+        newInfo = {
+            ...personalInfo,
+            [e.target.name]: e.target.value,
+        };
+    };
+
+    function handleSave(e) {
+        e.preventDefault();
+        setPersonalInfo(newInfo);
+        setEditing(false);
     }
 
     return (
@@ -56,7 +70,7 @@ export default function PersonalInfo() {
             <hr/>
             { infoStructure }
             {isEditing 
-            ? <button onClick={handleEdit}>
+            ? <button onClick={handleSave}>
                 Save Information
             </button>
             : <button onClick={handleEdit}>
