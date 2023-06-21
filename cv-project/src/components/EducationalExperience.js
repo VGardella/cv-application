@@ -7,9 +7,9 @@ import { useState } from 'react';
 export default function FormalEducation() {
     let edu = {
         bachelor: {
-            university: 'Facultad de Ciencias Exactas, Universidad Nacional de La Plata',
+            university: 'Universidad Nacional de La Plata',
             school: 'Facultad de Ciencias Exactas',
-            career: 'Biotechnology and Molecular Biology',
+            career: 'Bachelor\'s degree in Biotechnology and Molecular Biology',
             status: 'Complete',
             duration: '2013-2018',
         },
@@ -34,61 +34,63 @@ export default function FormalEducation() {
         eduStructure = (
             <form class='cv-form'>
                 <label>Career: </label>
-                <input name='career' placeholder={education.name} onChange={handleInfo}></input>
+                <input name='career' placeholder={education.bachelor.career} onChange={handleInfo}></input>
                 <br />
                 <label>Institution: </label>
-                <input name='school' placeholder={education.school} onChange={handleInfo}></input>
+                <input name='school' placeholder={education.bachelor.school} onChange={handleInfo}></input>
                 , 
-                <input name='university' placeholder={education.university} onChange={handleInfo}></input>
+                <input name='university' placeholder={education.bachelor.university} onChange={handleInfo}></input>
                 <br />
                 <label>Status: </label>
-                <input name='status' placeholder={education.status} onChange={handleInfo}></input>
+                <input name='status' placeholder={education.bachelor.status} onChange={handleInfo}></input>
                 <br />
                 <label>Duration: </label>
-                <input name='duration' placeholder={education.duration} onChange={handleInfo}></input>
+                <input name='duration' placeholder={education.bachelor.duration} onChange={handleInfo}></input>
             </form>
         );
         
         phdStructure = (
             <form class='cv-form'>
                 <label>Career: </label>
-                <input name='career' placeholder={education.name} onChange={handleInfo}></input>
+                <input name='career' placeholder={education.phd.name} onChange={handleInfo}></input>
                 <br />
                 <label>Institution: </label>
-                <input name='institute' placeholder={education.institute} onChange={handleInfo}></input>
+                <input name='institute' placeholder={education.phd.institute} onChange={handleInfo}></input>
                  - 
-                <input name='university' placeholder={education.university} onChange={handleInfo}></input>
+                <input name='university' placeholder={education.phd.university} onChange={handleInfo}></input>
                 <br />
                 <label>Status: </label>
-                <input name='status' placeholder={education.status} onChange={handleInfo}></input>
+                <input name='status' placeholder={education.phd.status} onChange={handleInfo}></input>
                 <br />
                 <label>Duration: </label>
-                <input name='duration' placeholder={education.duration} onChange={handleInfo}></input>
+                <input name='duration' placeholder={education.phd.duration} onChange={handleInfo}></input>
             </form>
         );
     } else {
         eduStructure = (
             <div>
-                <b>Career: </b> {education.career}
+                <b>Career: </b> {education.bachelor.career}
                 <br/>
-                <b>Institute: </b> {education.school}, {education.university}
+                <b>Institute: </b> {education.bachelor.school}, {education.bachelor.university}
                 <br/>
-                <b>Status: </b> {education.status}
+                <b>Status: </b> {education.bachelor.status}
                 <br/>
-                <b>Duration: </b> {education.duration}
+                <b>Duration: </b> {education.bachelor.duration}
                 <br/>
             </div>
         );
         
         phdStructure = (
             <div>
-            <b>Career: </b> {education.career}
+            <b>Career: </b> {education.phd.career}
             <br/>
-            <b>Institute: </b> {education.institute} - {education.university}
+            <b>Institute: </b> {education.phd.institute} - {education.phd.university}
             <br/>
-            <b>Status: </b> {education.status}
+            <b>Theme: </b> {education.phd.theme}
             <br/>
-            <b>Duration: </b> {education.duration}
+            <b>Status: </b> {education.phd.status}
+            <br/>
+            <b>Duration: </b> {education.phd.duration}
             <br/>
         </div>
         );
@@ -111,6 +113,27 @@ export default function FormalEducation() {
         setEditing(false);
     }
     
+    return (
+        <div class='principal'>
+            <h1 class='principal-title'>Education</h1>
+            <h2 class='section-title'>Degrees</h2>
+            <hr/>
+            <h3 class='section-title'>Undergraduate Degree</h3>
+            { eduStructure }
+            <br />
+            <h3 class='section-title'>Postgraduate Degree</h3>
+            { phdStructure }
+
+            {isEditing 
+            ? <button onClick={handleSave}>
+                Save Information
+            </button>
+            : <button onClick={handleEdit}>
+                Edit Information
+            </button>
+            }
+        </div>
+    );
 }
 
 export function Certifications() {
