@@ -144,7 +144,7 @@ export default function FormalEducation() {
 }
 
 export function Certifications() {
-    let certification = {
+    let certif = {
         dataScience: {
             title: 'Data Science Certification',
             institution: 'Coderhouse',
@@ -159,7 +159,10 @@ export function Certifications() {
         },
     };
 
-    
+    const [ isEditing, setEditing ] = useState(false);
+    const [ certification, setCertification ] = useState(certif);
+
+    let certStructure;
 }
 
 export function Courses() {
