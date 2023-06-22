@@ -96,21 +96,31 @@ export default function FormalEducation() {
     }
 
     function handleEdit(e) {
-        setEditing(true);
+        setEditing(!isEditing);
+        console.log(education);
     }
 
     function handleInfo(e) {
-        newEdu = {
-            ...education,
-              [e.target.name]: e.target.value,
-        };
-    };
+        // setEducation({
+        //     ...education,
+        //     bachelor: {
+        //         ...education.bachelor,
+        //         [e.target.name]: e.target.value,
+        //     },
+        //     phd: {
+        //         ...education.phd,
+        //         [e.target.name]: e.target.value
+        //     }})
+        // };
 
-    function handleSave(e) {
-        e.preventDefault();
-        setEducation(newEdu);
-        setEditing(false);
-    }
+        setEducation({
+            ...education,
+            [e.target.name.startsWith('bachelor') ? 'bachelor' : 'phd']: {
+              ...education[e.target.name.startsWith('bachelor') ? 'bachelor' : 'phd'],
+              [e.target.name]: e.target.value,
+            },
+        });
+    };
     
     return (
         <div class='principal'>
