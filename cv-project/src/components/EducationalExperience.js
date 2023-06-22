@@ -144,7 +144,22 @@ export default function FormalEducation() {
 }
 
 export function Certifications() {
+    let certification = {
+        dataScience: {
+            title: 'Data Science Certification',
+            institution: 'Coderhouse',
+            date: 'September, 2022',
+            img: ''
+        },
+        dataAnalytics: {
+            title: 'Data Analytics Certification',
+            institution: 'Coderhouse',
+            date: 'May, 2021',
+            img: ''
+        },
+    };
 
+    
 }
 
 export function Courses() {
