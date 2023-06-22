@@ -12,22 +12,21 @@ export default function PersonalInfo() {
     const [ personalInfo, setPersonalInfo ] = useState(info);
     
     let infoStructure;
-    let newInfo = {};
 
     if (isEditing) {
         infoStructure = (
             <form class='cv-form'>
                 <label>Name: </label>
-                <input name='name' placeholder={personalInfo.name} onChange={handleInfo}></input>
+                <input name='name' value={personalInfo.name} onChange={handleInfo}></input>
                 <br />
                 <label>Age: </label>
-                <input name='age' placeholder={personalInfo.age} onChange={handleInfo}></input>
+                <input name='age' value={personalInfo.age} onChange={handleInfo}></input>
                 <br />
                 <label>DNI: </label>
-                <input name='dni' placeholder={personalInfo.dni} onChange={handleInfo}></input>
+                <input name='dni' value={personalInfo.dni} onChange={handleInfo}></input>
                 <br />
                 <label>Country: </label>
-                <input name='country' placeholder={personalInfo.country} onChange={handleInfo}></input>
+                <input name='country' value={personalInfo.country} onChange={handleInfo}></input>
             </form>
         )
     } else {
@@ -48,35 +47,27 @@ export default function PersonalInfo() {
     }
 
     function handleEdit(e) {
-        setEditing(true);
+        setEditing(!isEditing);
     }
 
     function handleInfo(e) {
-        newInfo = {
+        setPersonalInfo({
             ...personalInfo,
             [e.target.name]: e.target.value,
-        };
+        });
     };
-
-    function handleSave(e) {
-        e.preventDefault();
-        setPersonalInfo(newInfo);
-        setEditing(false);
-    }
 
     return (
         <div class='principal'>
             <h1 class='principal-title'>Welcome to my Page!</h1>
             <hr/>
             { infoStructure }
+            <button onClick={handleEdit}>
             {isEditing 
-            ? <button onClick={handleSave}>
-                Save Information
-            </button>
-            : <button onClick={handleEdit}>
-                Edit Information
-            </button>
+            ? 'Save Information'
+            : 'Edit Information'
             }
+            </button>
         </div>
     );
 }
