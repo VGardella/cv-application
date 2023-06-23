@@ -163,7 +163,89 @@ export function Certifications() {
     const [ certification, setCertification ] = useState(certif);
 
     let certStructure;
+
+    if (isEditing) {
+        certStructure = (
+            <div class="principal">
+                <div className='form-container'>
+                    <form class='cv-form'>
+                        <label>Title: </label>
+                        <input name='title' value={certification.title} onChange={handleInfo}></input>
+                        <br />
+                        <label>Institution: </label>
+                        <input name='institution' value={certification.institution} onChange={handleInfo}></input>
+                        <br />
+                        <label>Date: </label>
+                        <input name='date' value={certification.date} onChange={handleInfo}></input>
+                    </form>
+                </div>
+                <div className='img-container'>
+                    <img className='certification-img' src='' alt={certification.title} />
+                </div>
+            </div>
+        );
+        
+    } else {
+        certStructure = (
+            <div class="principal">
+                <div className='form-container'>
+                    <b>Title: </b> {certification.title}
+                    <br/>
+                    <b>Institute: </b> {certification.institution}
+                    <br/>
+                    <b>Date: </b> {certification.date}
+                    <br/>
+                </div>
+                <div className='img-container'>
+                    <img className='certification-img' src='' alt={certification.title} />
+                </div>
+            </div>
+
+        );
+    }
+
+    function handleEdit(e) {
+        setEditing(!isEditing);
+        console.log(certification);
+    }
+
+    function handleInfo(e) {
+        // setEducation({
+        //     ...education,
+        //     bachelor: {
+        //         ...education.bachelor,
+        //         [e.target.name]: e.target.value,
+        //     },
+        //     phd: {
+        //         ...education.phd,
+        //         [e.target.name]: e.target.value
+        //     }})
+        // };
+
+        setCertification({
+            ...certification,
+            [e.target.name.startsWith('dataScience') ? 'dataScience' : 'dataAnalytics']: {
+              ...certification[e.target.name.startsWith('dataScience') ? 'dateScience' : 'dataAnalytics'],
+              [e.target.name]: e.target.value,
+            },
+        });
+    };
+    
+    return (
+        <div class='principal'>
+            <h2 class='section-title'>Certifications</h2>
+            { certStructure }
+
+            <button onClick={handleEdit}>
+            {isEditing 
+            ? 'Save Information'
+            : 'Edit Information'
+            }
+            </button>
+        </div>
+    );
 }
+
 
 export function Courses() {
 
