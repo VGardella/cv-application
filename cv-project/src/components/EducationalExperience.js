@@ -11,7 +11,7 @@ export default function FormalEducation() {
             career: 'Bachelor\'s degree in Biotechnology and Molecular Biology',
             status: 'Complete',
             duration: '2013-2018',
-        }
+        };
         
     let doctorate = {
             university: 'Universidad Nacional de La Plata',
@@ -20,17 +20,18 @@ export default function FormalEducation() {
             status: 'Abandoned',
             duration: '2018-2022',
             theme: 'Developement of molecular strategies for the control of the citrus disease HuangLongBing.'
-    }
+        };
 
-    const [ isEditing, setEditing ] = useState(false);
+    const [ isEditingBach, setEditingBach ] = useState(false);
+    const [ isEditingPhd, setEditingPhd ] = useState(false);
     const [ bach, setBach ] = useState(bachelor);
     const [ phd, setPhd ] = useState(doctorate);
 
-    let eduStructure;
+    let bachStructure;
     let phdStructure;
 
-    if (isEditing) {
-        eduStructure = (
+    if (isEditingBach) {
+        bachStructure = (
             <form className='cv-form'>
                 <label>Career: </label>
                 <input name='career' value={bach.career} onChange={handleInfo}></input>
@@ -47,7 +48,21 @@ export default function FormalEducation() {
                 <input name='duration' value={bach.duration} onChange={handleInfo}></input>
             </form>
         );
+    } else {
+        bachStructure = (
+            <div>
+                <b>Career: </b> {bach.career}
+                <br/>
+                <b>Institute: </b> {bach.school}, {bach.university}
+                <br/>
+                <b>Status: </b> {bach.status}
+                <br/>
+                <b>Duration: </b> {bach.duration}
+                <br/>
+            </div>
+    )};
         
+    if (isEditingPhd) {
         phdStructure = (
             <form className='cv-form'>
                 <label>Career: </label>
@@ -66,38 +81,21 @@ export default function FormalEducation() {
             </form>
         );
     } else {
-        eduStructure = (
-            <div>
-                <b>Career: </b> {bach.career}
-                <br/>
-                <b>Institute: </b> {bach.school}, {bach.university}
-                <br/>
-                <b>Status: </b> {bach.status}
-                <br/>
-                <b>Duration: </b> {bach.duration}
-                <br/>
-            </div>
-        );
-        
         phdStructure = (
             <div>
-            <b>Career: </b> {phd.career}
-            <br/>
-            <b>Institute: </b> {phd.institute} - {phd.university}
-            <br/>
-            <b>Theme: </b> {phd.theme}
-            <br/>
-            <b>Status: </b> {phd.status}
-            <br/>
-            <b>Duration: </b> {phd.duration}
-            <br/>
-        </div>
-        );
-    }
+                <b>Career: </b> {phd.career}
+                <br/>
+                <b>Institute: </b> {phd.institute} - {phd.university}
+                <br/>
+                <b>Theme: </b> {phd.theme}
+                <br/>
+                <b>Status: </b> {phd.status}
+                <br/>
+                <b>Duration: </b> {phd.duration}
+                <br/>
+            </div>
+    )};
 
-    function handleEdit(e) {
-        setEditing(!isEditing);
-    }
 
     function handleInfo(e) {
         // setEducation({
@@ -112,13 +110,13 @@ export default function FormalEducation() {
         //     }})
         // };
 
-        setEducation({
-            ...education,
-            [e.target.name.startsWith('bachelor') ? 'bachelor' : 'phd']: {
-              ...education[e.target.name.startsWith('bachelor') ? 'bachelor' : 'phd'],
-              [e.target.name]: e.target.value,
-            },
-        });
+        // setEducation({
+        //     ...education,
+        //     [e.target.name.startsWith('bachelor') ? 'bachelor' : 'phd']: {
+        //       ...education[e.target.name.startsWith('bachelor') ? 'bachelor' : 'phd'],
+        //       [e.target.name]: e.target.value,
+        //     },
+        // });
     };
     
     return (
@@ -128,18 +126,23 @@ export default function FormalEducation() {
                 <h2 className='section-title'>Degrees</h2>
                 <hr/>
                 <h3 className='section-title'>Undergraduate Degree</h3>
-                { eduStructure }
+                { bachStructure }
+                <button>
+                {isEditingBach
+                ? 'Save Information'
+                : 'Edit Information'
+                }
+                </button>
                 <br />
                 <h3 className='section-title'>Postgraduate Degree</h3>
                 { phdStructure }
-                <button onClick={handleEdit}>
-                {isEditing
+                <button onClick={setEditingPhd(!isEditingPhd)}>
+                {isEditingPhd
                 ? 'Save Information'
                 : 'Edit Information'
                 }
                 </button>
             </div>
-            <Certifications />
         </div>
     );
 }
