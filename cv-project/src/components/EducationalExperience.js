@@ -101,7 +101,15 @@ export default function FormalEducation() {
 
 
     function handleInfo(e) {
+        setBach({
+            ...bach,
+            [e.target.name]: e.target.value,
+        });
 
+        setPhd({
+            ...phd,
+            [e.target.name]: e.target.value,
+        })
     };
     
     return (
