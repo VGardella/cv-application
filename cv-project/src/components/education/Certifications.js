@@ -15,6 +15,13 @@ export function Certifications() {
         img: 'https://drive.google.com/file/d/1kDYhtmTyKQnWycvemGZhmZo6de4mh2iP/view?usp=sharing'
     }]
 
+    return (
+        <div className='cert-container'>
+            <CertifCard values={certif} />
+            <br />
+        </div>
+        
+    );
 };
 
 function CertifCard({ values }) {
