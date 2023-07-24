@@ -127,7 +127,7 @@ export default function FormalEducation() {
                 <hr/>
                 <h3 className='section-title'>Undergraduate Degree</h3>
                 { bachStructure }
-                <button>
+                <button onClick={() => {setEditingBach(!isEditingBach)}}>
                 {isEditingBach
                 ? 'Save Information'
                 : 'Edit Information'
@@ -136,7 +136,7 @@ export default function FormalEducation() {
                 <br />
                 <h3 className='section-title'>Postgraduate Degree</h3>
                 { phdStructure }
-                <button onClick={setEditingPhd(!isEditingPhd)}>
+                <button onClick={() => {setEditingPhd(!isEditingPhd)}}>
                 {isEditingPhd
                 ? 'Save Information'
                 : 'Edit Information'
@@ -147,114 +147,114 @@ export default function FormalEducation() {
     );
 }
 
-export function Certifications() {
-    let certif = {
-        dataScience: {
-            title: 'Data Science Certification',
-            institution: 'Coderhouse',
-            date: 'September, 2022',
-            img: ''
-        },
-        dataAnalytics: {
-            title: 'Data Analytics Certification',
-            institution: 'Coderhouse',
-            date: 'May, 2021',
-            img: ''
-        },
-    };
+// export function Certifications() {
+//     let certif = {
+//         dataScience: {
+//             title: 'Data Science Certification',
+//             institution: 'Coderhouse',
+//             date: 'September, 2022',
+//             img: ''
+//         },
+//         dataAnalytics: {
+//             title: 'Data Analytics Certification',
+//             institution: 'Coderhouse',
+//             date: 'May, 2021',
+//             img: ''
+//         },
+//     };
 
-    const [ isEditing, setEditing ] = useState(false);
-    const [ certification, setCertification ] = useState(certif);
+//     const [ isEditing, setEditing ] = useState(false);
+//     const [ certification, setCertification ] = useState(certif);
 
-    let certStructure;
+//     let certStructure;
 
-    if (isEditing) {
-        certStructure = (
-            <div className="principal">
-                <div className='form-container'>
-                    <form className='cv-form'>
-                        <label>Title: </label>
-                        <input name='title' value={certification.title} onChange={handleInfo}></input>
-                        <br />
-                        <label>Institution: </label>
-                        <input name='institution' value={certification.institution} onChange={handleInfo}></input>
-                        <br />
-                        <label>Date: </label>
-                        <input name='date' value={certification.date} onChange={handleInfo}></input>
-                    </form>
-                </div>
-                <div className='img-container'>
-                    <img className='certification-img' src='' alt={certification.title} />
-                </div>
-            </div>
-        );
+//     if (isEditing) {
+//         certStructure = (
+//             <div className="principal">
+//                 <div className='form-container'>
+//                     <form className='cv-form'>
+//                         <label>Title: </label>
+//                         <input name='title' value={certification.title} onChange={handleInfo}></input>
+//                         <br />
+//                         <label>Institution: </label>
+//                         <input name='institution' value={certification.institution} onChange={handleInfo}></input>
+//                         <br />
+//                         <label>Date: </label>
+//                         <input name='date' value={certification.date} onChange={handleInfo}></input>
+//                     </form>
+//                 </div>
+//                 <div className='img-container'>
+//                     <img className='certification-img' src='' alt={certification.title} />
+//                 </div>
+//             </div>
+//         );
         
-    } else {
-        certStructure = (
-            <div className="principal">
-                <div className='form-container'>
-                    <b>Title: </b> {certification.title}
-                    <br/>
-                    <b>Institute: </b> {certification.institution}
-                    <br/>
-                    <b>Date: </b> {certification.date}
-                    <br/>
-                </div>
-                <div className='img-container'>
-                    <img className='certification-img' src='' alt={certification.title} />
-                </div>
-            </div>
+//     } else {
+//         certStructure = (
+//             <div className="principal">
+//                 <div className='form-container'>
+//                     <b>Title: </b> {certification.title}
+//                     <br/>
+//                     <b>Institute: </b> {certification.institution}
+//                     <br/>
+//                     <b>Date: </b> {certification.date}
+//                     <br/>
+//                 </div>
+//                 <div className='img-container'>
+//                     <img className='certification-img' src='' alt={certification.title} />
+//                 </div>
+//             </div>
 
-        );
-    }
+//         );
+//     }
 
-    function handleEdit(e) {
-        setEditing(!isEditing);
-        console.log(certification);
-    }
+//     function handleEdit(e) {
+//         setEditing(!isEditing);
+//         console.log(certification);
+//     }
 
-    function handleInfo(e) {
-        // setEducation({
-        //     ...education,
-        //     bachelor: {
-        //         ...education.bachelor,
-        //         [e.target.name]: e.target.value,
-        //     },
-        //     phd: {
-        //         ...education.phd,
-        //         [e.target.name]: e.target.value
-        //     }})
-        // };
+//     function handleInfo(e) {
+//         // setEducation({
+//         //     ...education,
+//         //     bachelor: {
+//         //         ...education.bachelor,
+//         //         [e.target.name]: e.target.value,
+//         //     },
+//         //     phd: {
+//         //         ...education.phd,
+//         //         [e.target.name]: e.target.value
+//         //     }})
+//         // };
 
-        setCertification({
-            ...certification,
-            [e.target.name.startsWith('dataScience') ? 'dataScience' : 'dataAnalytics']: {
-              ...certification[e.target.name.startsWith('dataScience') ? 'dateScience' : 'dataAnalytics'],
-              [e.target.name]: e.target.value,
-            },
-        });
-    };
+//         setCertification({
+//             ...certification,
+//             [e.target.name.startsWith('dataScience') ? 'dataScience' : 'dataAnalytics']: {
+//               ...certification[e.target.name.startsWith('dataScience') ? 'dateScience' : 'dataAnalytics'],
+//               [e.target.name]: e.target.value,
+//             },
+//         });
+//     };
 
-    return (
-        <div className='principal'>
-            <h2 className='section-title'>Certifications</h2>
-            <hr />
-            { certStructure }
+//     return (
+//         <div className='principal'>
+//             <h2 className='section-title'>Certifications</h2>
+//             <hr />
+//             { certStructure }
 
-            <button onClick={handleEdit}>
-            {isEditing 
-            ? 'Save Information'
-            : 'Edit Information'
-            }
-            </button>
-        </div>
-    );
+//             <button onClick={handleEdit}>
+//             {isEditing 
+//             ? 'Save Information'
+//             : 'Edit Information'
+//             }
+//             </button>
+//         </div>
+//     );
 
-    // Hacer que el proceso de renderizado sea general, agarrando cada elemento del ovjeto cert y renderizandolo
-    // sin necesidad de especificar cual es cual.
-}
+//     // Hacer que el proceso de renderizado sea general, agarrando cada elemento del ovjeto cert y renderizandolo
+//     // sin necesidad de especificar cual es cual.
+// }
 
 
-export function Courses() {
+// export function Courses() {
 
-}
+// }
