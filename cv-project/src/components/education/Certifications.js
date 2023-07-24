@@ -1,20 +1,19 @@
 import { useState } from 'react';
 
 export function Certifications() {
-    let certif = {
-        dataScience: {
-            title: 'Data Science Certification',
-            institution: 'Coderhouse',
-            date: 'September, 2022',
-            img: 'https://drive.google.com/file/d/1lX8t7Xi8tkuzDoZ_jcKCen7KKzEVk63g/view?usp=sharing'
-        },
-        dataAnalytics: {
-            title: 'Data Analytics Certification',
-            institution: 'Coderhouse',
-            date: 'May, 2021',
-            img: 'https://drive.google.com/file/d/1kDYhtmTyKQnWycvemGZhmZo6de4mh2iP/view?usp=sharing'
-        },
-    };
+    let certif = [{
+        id: 0,
+        title: 'Data Science Certification',
+        institution: 'Coderhouse',
+        date: 'September, 2022',
+        img: 'https://drive.google.com/file/d/1lX8t7Xi8tkuzDoZ_jcKCen7KKzEVk63g/view?usp=sharing'
+    }, {
+        id: 1,
+        title: 'Data Analytics Certification',
+        institution: 'Coderhouse',
+        date: 'May, 2021',
+        img: 'https://drive.google.com/file/d/1kDYhtmTyKQnWycvemGZhmZo6de4mh2iP/view?usp=sharing'
+    }]
 
     const [ isEditing, setEditing ] = useState(false);
     const [ certification, setCertification ] = useState(certif);
