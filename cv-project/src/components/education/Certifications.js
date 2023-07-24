@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 
 export function Certifications() {
     let certif = [{
@@ -15,70 +15,28 @@ export function Certifications() {
         img: 'https://drive.google.com/file/d/1kDYhtmTyKQnWycvemGZhmZo6de4mh2iP/view?usp=sharing'
     }]
 
-    const [ isEditing, setEditing ] = useState(false);
-    const [ certification, setCertification ] = useState(certif);
+};
 
-    let certStructure;
-
-    if (isEditing) {
-        certStructure = (
-            <div className="principal">
-                <div className='form-container'>
-                    <form className='cv-form'>
-                        <label>Title: </label>
-                        <input name='title' value={certification.title} onChange={handleInfo}></input>
-                        <br />
-                        <label>Institution: </label>
-                        <input name='institution' value={certification.institution} onChange={handleInfo}></input>
-                        <br />
-                        <label>Date: </label>
-                        <input name='date' value={certification.date} onChange={handleInfo}></input>
-                    </form>
-                </div>
-                <div className='img-container'>
-                    <img className='certification-img' src='{certification.}' alt={certification.title}/>
-                </div>
-            </div>
-        );
-        
-    } else {
-        certStructure = (
-            <div className="principal">
-                <div className='form-container'>
+function CertifCard({ values }) {
+    const certList = values.map(certification =>
+        <div>
+            <div className="card-container">
+                <div className='infoContainer'>
                     <b>Title: </b> {certification.title}
                     <br/>
                     <b>Institute: </b> {certification.institution}
                     <br/>
                     <b>Date: </b> {certification.date}
-                    <br/>
                 </div>
-                <div className='img-container'>
-                    <img className='certification-img' src='' alt={certification.title} />
-                </div>
+                <img
+                    src={certification.img}
+                    alt={certification.title}
+                    style={{ width: 300 }}
+                />
             </div>
-
-        );
-    }
-
-    function handleEdit(e) {
-        setEditing(!isEditing);
-    }
-
-    function handleInfo(e) {
-    };
-
-    return (
-        <div className='principal'>
-            <h2 className='section-title'>Certifications</h2>
-            <hr />
-            { certStructure }
-
-            <button onClick={handleEdit}>
-            {isEditing 
-            ? 'Save Information'
-            : 'Edit Information'
-            }
-            </button>
+            <br/>
         </div>
     );
+
+    return certList;
 }
