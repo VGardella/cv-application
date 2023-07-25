@@ -80,3 +80,31 @@ export function PersonalProjects() {
         
     );
 };
+
+function ProjectCard({ values }) {
+    const projectList = values.map(project => 
+        <div key={project.id}>
+            <div className="proj-container">
+                <div className='info-container'>
+                    <b>Title: </b> {project.title}
+                    <br/>
+                    <b>Description: </b> {project.description}
+                    <br/>
+                    <b>Languages: </b> {project.languages}
+                    <br/>
+                </div>
+                <div class="links-container">
+                    <a href={project.repository} target="_blank" rel="noreferrer">
+                        <button>Go to Repository!</button>
+                    </a>
+                    <a href={project.livepreview} target="_blank" rel="noreferrer">
+                        <button>Go to Live Preview!</button>
+                    </a>
+                </div>
+            </div>
+            <br/>
+        </div>
+    )
+
+    return projectList
+};
