@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 
 export function Courses() {
     let courses = [{
@@ -85,24 +85,27 @@ export function Courses() {
 }
 
 function CoursesCard({ values }) {
+    const [ isEditing, setEditing ] = useState(false);
+    const [ courses, setCourses ] = useState(values);
+
     const coursesList = 
-        <div key={values.id}>
+        <div key={courses.id}>
         <div className="card-container">
             <div className='info-container'>
-            <b>Title: </b> {values.title}
+            <b>Title: </b> {courses.title}
             <br/>
-            <b>Institute: </b> {values.institution}
+            <b>Institute: </b> {courses.institution}
             <br/>
-            <b>Date: </b> {values.date}
+            <b>Date: </b> {courses.date}
             </div>
             <div className="img-container">
-            {values.img === null ? (
+            {courses.img === null ? (
                 <p>No Certificate</p>
             ) : (
-                <a href={values.img} target="_blank" rel="noreferrer">
+                <a href={courses.img} target="_blank" rel="noreferrer">
                 <img
-                    src={values.mini}
-                    alt={values.title}
+                    src={courses.mini}
+                    alt={courses.title}
                     style={{ width: 200 }}
                 />
                 </a>
