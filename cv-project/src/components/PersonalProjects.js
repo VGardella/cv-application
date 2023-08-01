@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export function PersonalProjects() {
     const projects = [{
         id: 0,
@@ -84,7 +86,11 @@ export function PersonalProjects() {
 };
 
 function ProjectCard({ values }) {
-    const projectList = values.map(project => 
+    const [ isEditing, setEiditing ] = useState(false);
+    const [ projects, setProjects ] = useState(values);
+    let projectList = null;
+
+    projectList = values.map(project => 
         <div key={project.id}>
             <div className="proj-container">
                 <div className='info-container'>
