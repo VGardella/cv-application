@@ -90,31 +90,65 @@ function ProjectCard({ values }) {
     const [ projects, setProjects ] = useState(values);
     let projectList = null;
 
-    projectList =  
-        <div key={projects.id}>
-            <div className='img-proj-container'>
-                <p>Filler text</p>
-            </div>
-            <div className="proj-container">
-                <div className='info-container'>
-                    <b>Title: </b> {projects.title}
-                    <br/>
-                    <b>Description: </b> {projects.description}
-                    <br/>
-                    <b>Languages: </b> {projects.languages}
-                    <br/>
+    if (!isEditing) {
+        projectList =  
+            <div key={projects.id}>
+                <div className='img-proj-container'>
+                    <p>Filler text</p>
                 </div>
-                <div className="links-container">
-                    <a href={projects.repository} target="_blank" rel="noreferrer">
-                        <button>Go to Repository!</button>
-                    </a>
-                    <a href={projects.livepreview} target="_blank" rel="noreferrer">
-                        <button>Go to Live Preview!</button>
-                    </a>
+                <div className="proj-container">
+                    <div className='info-container'>
+                        <b>Title: </b> {projects.title}
+                        <br/>
+                        <b>Description: </b> {projects.description}
+                        <br/>
+                        <b>Languages: </b> {projects.languages}
+                        <br/>
+                    </div>
+                    <div className="links-container">
+                        <a href={projects.repository} target="_blank" rel="noreferrer">
+                            <button>Go to Repository!</button>
+                        </a>
+                        <a href={projects.livepreview} target="_blank" rel="noreferrer">
+                            <button>Go to Live Preview!</button>
+                        </a>
+                    </div>
                 </div>
+                <br/>
             </div>
-            <br/>
-        </div>
+    } else {
+        projectList =  
+            <div key={projects.id}>
+                <div className='img-proj-container'>
+                    <p>Filler text</p>
+                </div>
+                <div className="proj-container">
+                    <div className='form-container'>
+                        <form className='cv-form'>
+                            <label>Title: </label>
+                            <input name='title' value={projects.title} onChange={handleInfo}></input>
+                            <br />
+                            <label>Description: </label>
+                            <input name='description' value={projects.description} onChange={handleInfo}></input>
+                            <br />
+                            <label>Languages: </label>
+                            <input name='languages' value={projects.languages} onChange={handleInfo}></input>
+                        </form>
+                    </div>
+                    <div className="links-container">
+                        <a href={projects.repository} target="_blank" rel="noreferrer">
+                            <label>New repository:</label>
+                            <input name='repository' value={projects.repository} onChange={handleInfo}></input>
+                        </a>
+                        <a href={projects.livepreview} target="_blank" rel="noreferrer">
+                            <label>New Live Preview:</label>
+                            <input name='livepreview' value={projects.livepreview} onChange={handleInfo}></input>
+                        </a>
+                    </div>
+                </div>
+                <br/>
+            </div>
+    }
 
     return projectList
 };
