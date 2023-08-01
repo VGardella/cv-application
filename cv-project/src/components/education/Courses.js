@@ -161,6 +161,17 @@ function CoursesCard({ values }) {
             <br/>
         </div>
     }
+        
+    function handleInfo(e) {
+        setCourses({
+            ...courses,
+            [e.target.name]: e.target.value
+        })
+    };
+
+    function handleEditing() {
+        setEditing(!isEditing);
+    }
     
     return coursesList
 }
