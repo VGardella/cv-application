@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export function WorkExperience() {
     const work = [{
         id: 0,
@@ -22,7 +24,11 @@ export function WorkExperience() {
 };
 
 function WorkCard({ values }) {
-    const workList = values.map(work => 
+    const [ isEditing, setEditing ] = useState(false);
+    const [ works, setWorks ] = useState(values);
+    let workList = null;
+
+    workList = values.map(work => 
         <div key={work.id}>
             <div className="work-container">
                 <div className='info-container'>
