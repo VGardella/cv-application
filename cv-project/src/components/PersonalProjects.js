@@ -115,6 +115,12 @@ function ProjectCard({ values }) {
                     </div>
                 </div>
                 <br/>
+                <button onClick={handleEditing}>
+                {isEditing
+                ? 'Save Information'
+                : 'Edit Information'
+                }
+                </button>
             </div>
     } else {
         projectList =  
@@ -137,18 +143,32 @@ function ProjectCard({ values }) {
                     </div>
                     <div className="links-container">
                         <a href={projects.repository} target="_blank" rel="noreferrer">
-                            <label>New repository:</label>
+                            <label>Repository:</label>
                             <input name='repository' value={projects.repository} onChange={handleInfo}></input>
                         </a>
                         <a href={projects.livepreview} target="_blank" rel="noreferrer">
-                            <label>New Live Preview:</label>
+                            <label>Live Preview:</label>
                             <input name='livepreview' value={projects.livepreview} onChange={handleInfo}></input>
                         </a>
                     </div>
                 </div>
                 <br/>
+                <button onClick={handleEditing}>
+                {isEditing
+                ? 'Save Information'
+                : 'Edit Information'
+                }
+                </button>
             </div>
     }
+
+    function handleInfo() {
+
+    };
+
+    function handleEditing() {
+        
+    };
 
     return projectList
 };
