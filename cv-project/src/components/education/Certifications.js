@@ -99,6 +99,17 @@ function CertifCard({ values }) {
                 <br/>
             </div>
     }
-    
+
+    function handleInfo(e) {
+        setCertifications({
+            ...certifications,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    function handelEditing() {
+        setEditing(!isEditing);
+    }
+
     return certList;
 }
