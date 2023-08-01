@@ -101,16 +101,19 @@ function CoursesCard({ values }) {
                     <b>Date: </b> {courses.date}
                     </div>
                     <div className="img-container">
-                    {courses.img === null ? (
+                    {courses.mini === null ? (
                         <p>No Certificate</p>
                     ) : (
-                        <a href={courses.img} target="_blank" rel="noreferrer">
-                        <img
-                            src={courses.mini}
-                            alt={courses.title}
-                            style={{ width: 200 }}
-                        />
-                        </a>
+                        <div>
+                            <img
+                                src={courses.mini}
+                                alt={courses.title}
+                                style={{ width: 200 }}
+                            />
+                            <a href={courses.img} target="_blank" rel="noreferrer">
+                                <button>Go to Course Certificate</button>    
+                            </a>
+                        </div> 
                     )}
                     </div>
                     <button onClick={handleEditing}>
@@ -140,14 +143,16 @@ function CoursesCard({ values }) {
                 </div>
                 <div className="img-container">
                     <form className='form-container'>
-                        <a href={courses.img} target="_blank" rel="noreferrer">
-                            <img
-                                src={courses.mini}
-                                alt={courses.title}
-                                style={{ width: 200 }}
-                            />
-                        </a>
+                        <img
+                            src={courses.mini}
+                            alt={courses.title}
+                            style={{ width: 200 }}
+                        />
                         <label>New image:</label>
+                        <input name='mini' value={courses.mini} onChange={handleInfo}></input>
+                        <a href={courses.img} target="_blank" rel="noreferrer">
+                        </a>
+                        <label>New link:</label>
                         <input name='img' value={courses.img} onChange={handleInfo}></input>
                     </form>
                 </div>
