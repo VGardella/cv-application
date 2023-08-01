@@ -76,31 +76,33 @@ export function Courses() {
     return (
         <div className='cert-container'>
             <hr />
-            <h2 className='section-title'>Certifications</h2>
-            <CoursesCard values={courses} />
+            <h2 className='section-title'>Courses:</h2>
+            {courses.map(item => 
+                <CoursesCard key={item.id} values={item} />    
+            )}
         </div>
     );
 }
 
 function CoursesCard({ values }) {
-    const coursesList = values.map(courses => (
-        <div key={courses.id}>
+    const coursesList = 
+        <div key={values.id}>
         <div className="card-container">
             <div className='info-container'>
-            <b>Title: </b> {courses.title}
+            <b>Title: </b> {values.title}
             <br/>
-            <b>Institute: </b> {courses.institution}
+            <b>Institute: </b> {values.institution}
             <br/>
-            <b>Date: </b> {courses.date}
+            <b>Date: </b> {values.date}
             </div>
             <div className="img-container">
-            {courses.img === null ? (
+            {values.img === null ? (
                 <p>No Certificate</p>
             ) : (
-                <a href={courses.img} target="_blank" rel="noreferrer">
+                <a href={values.img} target="_blank" rel="noreferrer">
                 <img
-                    src={courses.mini}
-                    alt={courses.title}
+                    src={values.mini}
+                    alt={values.title}
                     style={{ width: 200 }}
                 />
                 </a>
@@ -109,7 +111,7 @@ function CoursesCard({ values }) {
         </div>
         <br/>
         </div>    
-    ));
+
     
     return coursesList
 }
