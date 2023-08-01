@@ -162,12 +162,15 @@ function ProjectCard({ values }) {
             </div>
     }
 
-    function handleInfo() {
-
+    function handleInfo(e) {
+        setProjects({
+            ...projects,
+            [e.target.name]: e.target.value,
+        })
     };
 
     function handleEditing() {
-        
+        setEiditing(!isEditing);
     };
 
     return projectList
