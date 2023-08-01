@@ -24,7 +24,7 @@ export function WorkExperience() {
 };
 
 function WorkCard({ values }) {
-    const [ isEditing, setEditing ] = useState(true);
+    const [ isEditing, setEditing ] = useState(false);
     const [ works, setWorks ] = useState(values);
     let workList = null;
 
@@ -45,8 +45,13 @@ function WorkCard({ values }) {
                                 </li>
                             ))}
                         </ul>
-                        <br/>
                     </div>
+                    <button onClick={handleEditing}>
+                    {isEditing
+                    ? 'Save Information'
+                    : 'Edit Information'
+                    }
+                    </button>
                 </div>
                 <br/>
             </div>
@@ -69,8 +74,13 @@ function WorkCard({ values }) {
                                 </li>
                             ))}
                         </ul>
-                        <br/>
                     </div>
+                    <button onClick={handleEditing}>
+                    {isEditing
+                    ? 'Save Information'
+                    : 'Edit Information'
+                    }
+                    </button>
                 </div>
                 <br/>
             </div>
