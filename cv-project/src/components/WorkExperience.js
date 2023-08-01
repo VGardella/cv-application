@@ -24,32 +24,57 @@ export function WorkExperience() {
 };
 
 function WorkCard({ values }) {
-    const [ isEditing, setEditing ] = useState(false);
+    const [ isEditing, setEditing ] = useState(true);
     const [ works, setWorks ] = useState(values);
     let workList = null;
 
-    workList = values.map(work => 
-        <div key={work.id}>
-            <div className="work-container">
-                <div className='info-container'>
-                    <b>Title: </b> {work.title}
-                    <br/>
-                    <b>Institution: </b> {work.institution}
-                    <br/>
-                    <b>Description: </b>
-                    <ul>
-                        {work.description.map((description) => (
-                            <li key={description.id}>
-                                {description.desc}
-                            </li>
-                        ))}
-                    </ul>
-                    <br/>
+    if (!isEditing) {
+        workList = 
+            <div key={works.id}>
+                <div className="work-container">
+                    <div className='info-container'>
+                        <b>Title: </b> {works.title}
+                        <br/>
+                        <b>Institution: </b> {works.institution}
+                        <br/>
+                        <b>Description: </b>
+                        <ul>
+                            {works.description.map((description) => (
+                                <li key={description.id}>
+                                    {description.desc}
+                                </li>
+                            ))}
+                        </ul>
+                        <br/>
+                    </div>
                 </div>
+                <br/>
             </div>
-            <br/>
-        </div>
-    )
+    } else {
+        workList = 
+            <div key={works.id}>
+                <div className="work-container">
+                    <div className='form-container'>
+                        <label>Title: </label>
+                        <input name='title' value={works.title} onChange={handleInfo}></input>
+                        <br/>
+                        <label>Institution: </label>
+                        <input name='institution' value={works.institution} onChange={handleInfo}></input>
+                        <br/>
+                        <label>Description: </label>
+                        <ul>
+                            {works.description.map((description) => (
+                                <li key={description.id}>
+                                    <input name={description.id} value={description.desc} onChange={handleInfo}></input>
+                                </li>
+                            ))}
+                        </ul>
+                        <br/>
+                    </div>
+                </div>
+                <br/>
+            </div>
+    }
 
     return workList;
 }
