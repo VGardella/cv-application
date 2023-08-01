@@ -87,34 +87,80 @@ export function Courses() {
 function CoursesCard({ values }) {
     const [ isEditing, setEditing ] = useState(false);
     const [ courses, setCourses ] = useState(values);
+    let coursesList = null;
 
-    const coursesList = 
+    if (!isEditing) {
+        coursesList = 
+            <div key={courses.id}>
+                <div className="card-container">
+                    <div className='info-container'>
+                    <b>Title: </b> {courses.title}
+                    <br/>
+                    <b>Institution: </b> {courses.institution}
+                    <br/>
+                    <b>Date: </b> {courses.date}
+                    </div>
+                    <div className="img-container">
+                    {courses.img === null ? (
+                        <p>No Certificate</p>
+                    ) : (
+                        <a href={courses.img} target="_blank" rel="noreferrer">
+                        <img
+                            src={courses.mini}
+                            alt={courses.title}
+                            style={{ width: 200 }}
+                        />
+                        </a>
+                    )}
+                    </div>
+                    <button onClick={handleEditing}>
+                    {isEditing
+                    ? 'Save Information'
+                    : 'Edit Information'
+                    }
+                    </button>
+                </div>
+                <br/>
+            </div>
+    } else {
+        coursesList = 
         <div key={courses.id}>
-        <div className="card-container">
-            <div className='info-container'>
-            <b>Title: </b> {courses.title}
-            <br/>
-            <b>Institute: </b> {courses.institution}
-            <br/>
-            <b>Date: </b> {courses.date}
+            <div className="card-container">
+                <div className='form-container'>
+                    <form className='cv-form'>
+                        <label>Title: </label>
+                        <input name='title' value={courses.title} onChange={handleInfo}></input>
+                        <br />
+                        <label>Institution: </label>
+                        <input name='institution' value={courses.institution} onChange={handleInfo}></input>
+                        <br />
+                        <label>Date: </label>
+                        <input name='date' value={courses.date} onChange={handleInfo}></input>
+                    </form>
+                </div>
+                <div className="img-container">
+                    <form className='form-container'>
+                        <a href={courses.img} target="_blank" rel="noreferrer">
+                            <img
+                                src={courses.mini}
+                                alt={courses.title}
+                                style={{ width: 200 }}
+                            />
+                        </a>
+                        <label>New image:</label>
+                        <input name='img' value={courses.img} onChange={handleInfo}></input>
+                    </form>
+                </div>
+                <button onClick={handleEditing}>
+                {isEditing
+                ? 'Save Information'
+                : 'Edit Information'
+                }
+                </button>
             </div>
-            <div className="img-container">
-            {courses.img === null ? (
-                <p>No Certificate</p>
-            ) : (
-                <a href={courses.img} target="_blank" rel="noreferrer">
-                <img
-                    src={courses.mini}
-                    alt={courses.title}
-                    style={{ width: 200 }}
-                />
-                </a>
-            )}
-            </div>
+            <br/>
         </div>
-        <br/>
-        </div>    
-
+    }
     
     return coursesList
 }
