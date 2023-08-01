@@ -14,7 +14,9 @@ export function WorkExperience() {
         <div className='works-container'>
             <hr />
             <h2 className='section-title'>Work Experience</h2>
-            <WorkCard values={work} />
+            {work.map(item =>
+                <WorkCard key={item.id} values={item} />    
+            )}
         </div>
     );
 };
