@@ -90,29 +90,31 @@ function ProjectCard({ values }) {
     const [ projects, setProjects ] = useState(values);
     let projectList = null;
 
-    projectList = values.map(project => 
-        <div key={project.id}>
+    projectList =  
+        <div key={projects.id}>
+            <div className='img-proj-container'>
+                <p>Filler text</p>
+            </div>
             <div className="proj-container">
                 <div className='info-container'>
-                    <b>Title: </b> {project.title}
+                    <b>Title: </b> {projects.title}
                     <br/>
-                    <b>Description: </b> {project.description}
+                    <b>Description: </b> {projects.description}
                     <br/>
-                    <b>Languages: </b> {project.languages}
+                    <b>Languages: </b> {projects.languages}
                     <br/>
                 </div>
-                <div class="links-container">
-                    <a href={project.repository} target="_blank" rel="noreferrer">
+                <div className="links-container">
+                    <a href={projects.repository} target="_blank" rel="noreferrer">
                         <button>Go to Repository!</button>
                     </a>
-                    <a href={project.livepreview} target="_blank" rel="noreferrer">
+                    <a href={projects.livepreview} target="_blank" rel="noreferrer">
                         <button>Go to Live Preview!</button>
                     </a>
                 </div>
             </div>
             <br/>
         </div>
-    )
 
     return projectList
 };
