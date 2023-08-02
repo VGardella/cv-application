@@ -26,7 +26,7 @@ export default function PersonalInfo() {
                         <input name='img' value={personalInfo.img} onChange={handleInfo}></input>
                     </form>
                 </div>
-                <form className='cv-form'>
+                <form className='info-container'>
                     <label>Name: </label>
                     <input name='name' value={personalInfo.name} onChange={handleInfo}></input>
                     <br />
@@ -48,13 +48,13 @@ export default function PersonalInfo() {
                     <img src={personalInfo.img} alt='Profile' style={{ width: 200 }}></img>
                 </div>
                 <div className='info-container'>
-                    <b>Name: </b> {personalInfo.name}
+                    <label>Name: </label> {personalInfo.name}
                     <br/>
-                    <b>Age: </b> {personalInfo.age}
+                    <label>Age: </label> {personalInfo.age}
                     <br/>
-                    <b>DNI: </b> {personalInfo.dni}
+                    <label>DNI: </label> {personalInfo.dni}
                     <br/>
-                    <b>Country: </b> {personalInfo.country}
+                    <label>Country: </label> {personalInfo.country}
                     <br/>
                 </div>
             </div>
