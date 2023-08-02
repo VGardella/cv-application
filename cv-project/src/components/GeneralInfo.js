@@ -20,7 +20,7 @@ export default function PersonalInfo() {
                 <div className='img-container'>
                     <form className='form-container'>
                         <a href={personalInfo.img} target="_blank" rel="noreferrer">
-                            <img src={personalInfo.img} alt='Profile'/>
+                            <img src={personalInfo.img} alt='Profile' style={{ width: 200 }}/>
                         </a>
                         <label>New profile picture: </label>
                         <input name='img' value={personalInfo.img} onChange={handleInfo}></input>
@@ -45,7 +45,7 @@ export default function PersonalInfo() {
         infoStructure = (
             <div className="principal-container">
                 <div className='avatar-container'>
-                    <img src={personalInfo.img} alt='Profile'></img>
+                    <img src={personalInfo.img} alt='Profile' style={{ width: 200 }}></img>
                 </div>
                 <div className='info-container'>
                     <b>Name: </b> {personalInfo.name}
