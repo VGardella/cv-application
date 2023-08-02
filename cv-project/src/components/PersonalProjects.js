@@ -94,7 +94,13 @@ function ProjectCard({ values }) {
         projectList =  
             <div key={projects.id}>
                 <div className='img-proj-container'>
-                    <p>Filler text</p>
+                    <a href={projects.img} target="_blank" rel="noreferrer">
+                        <img
+                            src={projects.img}
+                            alt={projects.title}
+                            style={{ width: 500 }}
+                        />
+                    </a>
                 </div>
                 <div className="proj-container">
                     <div className='info-container'>
