@@ -15,7 +15,7 @@ export default function PersonalInfo() {
 
     if (isEditing) {
         infoStructure = (
-            <form class='cv-form'>
+            <form className='cv-form'>
                 <label>Name: </label>
                 <input name='name' value={personalInfo.name} onChange={handleInfo}></input>
                 <br />
@@ -46,7 +46,7 @@ export default function PersonalInfo() {
         )
     }
 
-    function handleEdit(e) {
+    function handleEdit() {
         setEditing(!isEditing);
     }
 
@@ -58,8 +58,8 @@ export default function PersonalInfo() {
     };
 
     return (
-        <div class='principal'>
-            <h1 class='principal-title'>Welcome to my Page!</h1>
+        <div className='principal'>
+            <h1 className='principal-title'>Welcome to my Page!</h1>
             <hr/>
             { infoStructure }
             <button onClick={handleEdit}>
