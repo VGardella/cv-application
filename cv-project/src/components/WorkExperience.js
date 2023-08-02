@@ -68,11 +68,11 @@ function WorkCard({ values }) {
                         <br/>
                         <label>Description: </label>
                         <ul>
-                            {works.description.map((description) => (
+                            {works.description.map(description => 
                                 <li key={description.id}>
-                                    <input name={description.id} value={description.desc} onChange={handleInfo}></input>
+                                    <input name={description.id} value={description.desc} onChange={(e) => handleDescription(e, description.id)}></input>
                                 </li>
-                            ))}
+                            )}
                         </ul>
                     </div>
                     <button onClick={handleEditing}>
@@ -84,6 +84,32 @@ function WorkCard({ values }) {
                 </div>
                 <br/>
             </div>
+    }
+
+    function handleEditing() {
+        setEditing(!isEditing);
+    }
+
+    function handleInfo(e) {
+        setWorks({
+            ...works,
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    function handleDescription(e, itemId) {
+        const tempArray = [...works.description];
+        let index = tempArray.findIndex(item => item.id === itemId);
+        
+        tempArray[index] = {
+            id: tempArray[index].id,
+            desc: e.target.value,
+        }
+
+        setWorks({
+            ...works,
+            description: tempArray
+        })
     }
 
     return workList;
