@@ -17,7 +17,7 @@ export default function PersonalInfo() {
     if (isEditing) {
         infoStructure = (
             <div className="principal-container">
-                <div className='img-container'>
+                <div className='avatar-container'>
                     <form className='form-container'>
                         <a href={personalInfo.img} target="_blank" rel="noreferrer">
                             <img src={personalInfo.img} alt='Profile' style={{ width: 200 }}/>
@@ -79,7 +79,7 @@ export default function PersonalInfo() {
             <h1 className='principal-title'>Welcome to my Page!</h1>
             <hr/>
             { infoStructure }
-            <button onClick={handleEdit}>
+            <button className='edit-button' onClick={handleEdit}>
             {isEditing 
             ? 'Save Information'
             : 'Edit Information'
