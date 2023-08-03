@@ -2,20 +2,20 @@ import { useState } from 'react';
 
 export default function FormalEducation() {
     let bachelor = {
-            bachUniversity: 'Universidad Nacional de La Plata',
-            bachSchool: 'Facultad de Ciencias Exactas',
-            bachCareer: 'Bachelor\'s degree in Biotechnology and Molecular Biology',
-            bachStatus: 'Complete',
-            bachDuration: '2013-2018',
+            university: 'Universidad Nacional de La Plata',
+            school: 'Facultad de Ciencias Exactas',
+            career: 'Bachelor\'s degree in Biotechnology and Molecular Biology',
+            status: 'Complete',
+            duration: '2013-2018',
         };
         
     let doctorate = {
-            docUniversity: 'Universidad Nacional de La Plata',
-            docInstitute: 'Institute of Biotecnology and Molecular Biology',
-            docCareer: 'PhD in Biotechnology and Molecular Biology',
-            docStatus: 'Abandoned',
-            docDuration: '2018-2022',
-            docTheme: 'Developement of molecular strategies for the control of the citrus disease HuangLongBing.'
+            university: 'Universidad Nacional de La Plata',
+            institution: 'Institute of Biotecnology and Molecular Biology',
+            career: 'PhD in Biotechnology and Molecular Biology',
+            status: 'Abandoned',
+            duration: '2018-2022',
+            theme: 'Developement of molecular strategies for the control of the citrus disease HuangLongBing.'
         };
 
     return (
@@ -39,48 +39,48 @@ function BachelorCard({ values }) {
 };
 
 function PhdCard({ values }) {
-    
+
 }
 
-//     const [ isEditingBach, setEditingBach ] = useState(false);
-//     const [ isEditingPhd, setEditingPhd ] = useState(false);
-//     const [ bach, setBach ] = useState(bachelor);
-//     const [ phd, setPhd ] = useState(doctorate);
 
-//     let bachStructure;
-//     let phdStructure;
+    const [ isEditingPhd, setEditingPhd ] = useState(false);
 
-//     if (isEditingBach) {
-//         bachStructure = (
-//             <form className='cv-form'>
-//                 <label>Career: </label>
-//                 <input name='bachCareer' value={bach.bachCareer} onChange={handleInfo}></input>
-//                 <br />
-//                 <label>Institution: </label>
-//                 <input name='bachSchool' value={bach.bachSchool} onChange={handleInfo}></input>
-//                 , 
-//                 <input name='bachUniversity' value={bach.bachUniversity} onChange={handleInfo}></input>
-//                 <br />
-//                 <label>Status: </label>
-//                 <input name='bachStatus' value={bach.bachStatus} onChange={handleInfo}></input>
-//                 <br />
-//                 <label>Duration: </label>
-//                 <input name='bachDuration' value={bach.bachDuration} onChange={handleInfo}></input>
-//             </form>
-//         );
-//     } else {
-//         bachStructure = (
-//             <div>
-//                 <b>Career: </b> {bach.bachCareer}
-//                 <br/>
-//                 <b>Institute: </b> {bach.bachSchool}, {bach.bachUniversity}
-//                 <br/>
-//                 <b>Status: </b> {bach.bachStatus}
-//                 <br/>
-//                 <b>Duration: </b> {bach.bachDuration}
-//                 <br/>
-//             </div>
-//     )};
+    const [ phd, setPhd ] = useState(doctorate);
+
+    let bachStructure;
+    let phdStructure;
+
+    if (isEditingBach) {
+        bachStructure = (
+            <form className='cv-form'>
+                <label>Career: </label>
+                <input name='bachCareer' value={bach.bachCareer} onChange={handleInfo}></input>
+                <br />
+                <label>Institution: </label>
+                <input name='bachSchool' value={bach.bachSchool} onChange={handleInfo}></input>
+                , 
+                <input name='bachUniversity' value={bach.bachUniversity} onChange={handleInfo}></input>
+                <br />
+                <label>Status: </label>
+                <input name='bachStatus' value={bach.bachStatus} onChange={handleInfo}></input>
+                <br />
+                <label>Duration: </label>
+                <input name='bachDuration' value={bach.bachDuration} onChange={handleInfo}></input>
+            </form>
+        );
+    } else {
+        bachStructure = (
+            <div>
+                <b>Career: </b> {bach.bachCareer}
+                <br/>
+                <b>Institute: </b> {bach.bachSchool}, {bach.bachUniversity}
+                <br/>
+                <b>Status: </b> {bach.bachStatus}
+                <br/>
+                <b>Duration: </b> {bach.bachDuration}
+                <br/>
+            </div>
+    )};
         
 //     if (isEditingPhd) {
 //         phdStructure = (
