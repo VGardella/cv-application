@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function FormalEducation() {
+export default function Degrees() {
     let bachelor = {
             university: 'Universidad Nacional de La Plata',
             school: 'Facultad de Ciencias Exactas',
@@ -21,7 +21,6 @@ export default function FormalEducation() {
     return (
         <div>
             <div className='principal'>
-                <h1 className='principal-title'>Education</h1>
                 <h2 className='section-title'>Degrees</h2>
                 <hr/>
                 <h3 className='section-title'>Undergraduate Degree</h3>
@@ -151,7 +150,6 @@ function PhdCard({ values }) {
             : 'Edit Information'
             }
             </button>
-            <br />
         </div>
     );
 
