@@ -14,9 +14,9 @@ export function WorkExperience() {
 
     return (
         <div>
+            <hr />
+            <h1 className='section-title'>Work Experience</h1>
             <div className='principal'>
-                <hr />
-                <h2 className='section-title'>Work Experience</h2>
                 {work.map(item =>
                     <WorkCard key={item.id} values={item} />
                 )}

@@ -90,8 +90,6 @@ export default function PersonalInfo() {
     return (
         <div>
             <div className='principal'>
-                <h1 className='principal-title'>Welcome to my Page!</h1>
-                <hr/>
                 { infoStructure }
                 <button className='edit-button' onClick={handleEdit}>
                 {isEditing

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function Degrees() {
+export function Degrees() {
     let bachelor = {
             university: 'Universidad Nacional de La Plata',
             school: 'Facultad de Ciencias Exactas',

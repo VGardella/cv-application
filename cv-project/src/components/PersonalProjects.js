@@ -85,9 +85,9 @@ export function PersonalProjects() {
 
     return (
         <div>
+            <hr />
+            <h1 className='section-title'>Projects</h1>
             <div className='principal'>
-                <hr />
-                <h2 className='section-title'>Projects</h2>
                 {projects.map(item =>
                     <ProjectCard key={item.id} values={item} />
                 )}
