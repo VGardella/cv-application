@@ -25,10 +25,10 @@ export default function FormalEducation() {
                 <h2 className='section-title'>Degrees</h2>
                 <hr/>
                 <h3 className='section-title'>Undergraduate Degree</h3>
-                <BachelorCard values={bachelor} />
+                    <BachelorCard values={bachelor} />
                 <br />
                 <h3 className='section-title'>Postgraduate Degree</h3>
-                <PhdCard values={doctorate} />
+                    {/* <PhdCard values={doctorate} /> */}
             </div>
         </div>
     );
@@ -37,50 +37,73 @@ export default function FormalEducation() {
 function BachelorCard({ values }) {
     const [ isEditingBach, setEditingBach ] = useState(false);
     const [ bach, setBach ] = useState(values);
-
-};
-
-function PhdCard({ values }) {
-    const [ isEditingPhd, setEditingPhd ] = useState(false);
-    const [ phd, setPhd ] = useState(values);
-}
-
-
-
-    let bachStructure;
-    let phdStructure;
+    let bachStructure = null;
 
     if (isEditingBach) {
         bachStructure = (
             <form className='cv-form'>
                 <label>Career: </label>
-                <input name='bachCareer' value={bach.bachCareer} onChange={handleInfo}></input>
+                <input name='bachCareer' value={bach.career} onChange={handleInfo}></input>
                 <br />
                 <label>Institution: </label>
-                <input name='bachSchool' value={bach.bachSchool} onChange={handleInfo}></input>
+                <input name='bachSchool' value={bach.school} onChange={handleInfo}></input>
                 , 
-                <input name='bachUniversity' value={bach.bachUniversity} onChange={handleInfo}></input>
+                <input name='bachUniversity' value={bach.university} onChange={handleInfo}></input>
                 <br />
                 <label>Status: </label>
-                <input name='bachStatus' value={bach.bachStatus} onChange={handleInfo}></input>
+                <input name='bachStatus' value={bach.status} onChange={handleInfo}></input>
                 <br />
                 <label>Duration: </label>
-                <input name='bachDuration' value={bach.bachDuration} onChange={handleInfo}></input>
+                <input name='bachDuration' value={bach.duration} onChange={handleInfo}></input>
             </form>
         );
     } else {
         bachStructure = (
             <div>
-                <b>Career: </b> {bach.bachCareer}
+                <b>Career: </b> {bach.career}
                 <br/>
-                <b>Institute: </b> {bach.bachSchool}, {bach.bachUniversity}
+                <b>Institute: </b> {bach.school}, {bach.university}
                 <br/>
-                <b>Status: </b> {bach.bachStatus}
+                <b>Status: </b> {bach.status}
                 <br/>
-                <b>Duration: </b> {bach.bachDuration}
+                <b>Duration: </b> {bach.duration}
                 <br/>
             </div>
     )};
+
+    function handleInfo(e) {
+        setBach({
+            ...bach,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    return (
+        <div>
+            { bachStructure }
+            <button onClick={() => {setEditingBach(!isEditingBach)}}>
+            {isEditingBach
+            ? 'Save Information'
+            : 'Edit Information'
+            }
+            </button>
+            <br />
+        </div>
+    );
+}
+
+
+// function PhdCard({ values }) {
+//     const [ isEditingPhd, setEditingPhd ] = useState(false);
+//     const [ phd, setPhd ] = useState(values);
+// }
+
+
+
+    
+//     let phdStructure;
+
+
         
 //     if (isEditingPhd) {
 //         phdStructure = (
@@ -120,17 +143,17 @@ function PhdCard({ values }) {
 //     )};
 
 
-//     function handleInfo(e) {
-//         setBach({
-//             ...bach,
-//             [e.target.name]: e.target.value,
-//         });
+    // function handleInfo(e) {
+    //     setBach({
+    //         ...bach,
+    //         [e.target.name]: e.target.value,
+    //     });
 
-//         setPhd({
-//             ...phd,
-//             [e.target.name]: e.target.value,
-//         })
-//     };
+    //     setPhd({
+    //         ...phd,
+    //         [e.target.name]: e.target.value,
+    //     })
+    // };
     
 //     return (
 //         <div>
