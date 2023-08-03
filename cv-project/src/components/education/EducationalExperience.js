@@ -43,18 +43,18 @@ function BachelorCard({ values }) {
         bachStructure = (
             <form className='cv-form'>
                 <label>Career: </label>
-                <input name='bachCareer' value={bach.career} onChange={handleInfo}></input>
+                <input name='career' value={bach.career} onChange={handleInfo}></input>
                 <br />
                 <label>Institution: </label>
-                <input name='bachSchool' value={bach.school} onChange={handleInfo}></input>
+                <input name='school' value={bach.school} onChange={handleInfo}></input>
                 , 
-                <input name='bachUniversity' value={bach.university} onChange={handleInfo}></input>
+                <input name='university' value={bach.university} onChange={handleInfo}></input>
                 <br />
                 <label>Status: </label>
-                <input name='bachStatus' value={bach.status} onChange={handleInfo}></input>
+                <input name='status' value={bach.status} onChange={handleInfo}></input>
                 <br />
                 <label>Duration: </label>
-                <input name='bachDuration' value={bach.duration} onChange={handleInfo}></input>
+                <input name='duration' value={bach.duration} onChange={handleInfo}></input>
             </form>
         );
     } else {
@@ -102,21 +102,21 @@ function PhdCard({ values }) {
         phdStructure = (
             <form className='cv-form'>
                 <label>Career: </label>
-                <input name='docCareer' value={phd.career} onChange={handleInfo}></input>
+                <input name='career' value={phd.career} onChange={handleInfo}></input>
                 <br />
                 <label>Institution: </label>
-                <input name='docInstitute' value={phd.institution} onChange={handleInfo}></input>
+                <input name='institution' value={phd.institution} onChange={handleInfo}></input>
                  - 
-                <input name='docUniversity' value={phd.university} onChange={handleInfo}></input>
+                <input name='university' value={phd.university} onChange={handleInfo}></input>
                 <br />
                 <label>Theme: </label>
-                <input name='docTheme' value={phd.theme} onChange={handleInfo}></input>
+                <input name='theme' value={phd.theme} onChange={handleInfo}></input>
                 <br />
                 <label>Status: </label>
-                <input name='docStatus' value={phd.status} onChange={handleInfo}></input>
+                <input name='status' value={phd.status} onChange={handleInfo}></input>
                 <br />
                 <label>Duration: </label>
-                <input name='docDuration' value={phd.duration} onChange={handleInfo}></input>
+                <input name='duration' value={phd.duration} onChange={handleInfo}></input>
             </form>
         );
     } else {
