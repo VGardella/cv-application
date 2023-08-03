@@ -35,17 +35,17 @@ export default function FormalEducation() {
 }
 
 function BachelorCard({ values }) {
+    const [ isEditingBach, setEditingBach ] = useState(false);
+    const [ bach, setBach ] = useState(values);
 
 };
 
 function PhdCard({ values }) {
-
+    const [ isEditingPhd, setEditingPhd ] = useState(false);
+    const [ phd, setPhd ] = useState(values);
 }
 
 
-    const [ isEditingPhd, setEditingPhd ] = useState(false);
-
-    const [ phd, setPhd ] = useState(doctorate);
 
     let bachStructure;
     let phdStructure;
