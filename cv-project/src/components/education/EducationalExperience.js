@@ -60,13 +60,13 @@ function BachelorCard({ values }) {
     } else {
         bachStructure = (
             <div>
-                <b>Career: </b> {bach.career}
+                <label>Career: </label> {bach.career}
                 <br/>
-                <b>Institute: </b> {bach.school}, {bach.university}
+                <label>Institute: </label> {bach.school}, {bach.university}
                 <br/>
-                <b>Status: </b> {bach.status}
+                <label>Status: </label> {bach.status}
                 <br/>
-                <b>Duration: </b> {bach.duration}
+                <label>Duration: </label> {bach.duration}
                 <br/>
             </div>
     )};
@@ -79,7 +79,7 @@ function BachelorCard({ values }) {
     };
 
     return (
-        <div>
+        <div className='card-container'>
             { bachStructure }
             <button onClick={() => {setEditingBach(!isEditingBach)}}>
             {isEditingBach
@@ -87,7 +87,6 @@ function BachelorCard({ values }) {
             : 'Edit Information'
             }
             </button>
-            <br />
         </div>
     );
 }
@@ -122,15 +121,15 @@ function PhdCard({ values }) {
     } else {
         phdStructure = (
             <div>
-                <b>Career: </b> {phd.career}
+                <label>Career: </label> {phd.career}
                 <br/>
-                <b>Institute: </b> {phd.institution} - {phd.university}
+                <label>Institute: </label> {phd.institution} - {phd.university}
                 <br/>
-                <b>Theme: </b> {phd.theme}
+                <label>Theme: </label> {phd.theme}
                 <br/>
-                <b>Status: </b> {phd.status}
+                <label>Status: </label> {phd.status}
                 <br/>
-                <b>Duration: </b> {phd.duration}
+                <label>Duration: </label> {phd.duration}
                 <br/>
             </div>
     )};
@@ -144,7 +143,7 @@ function PhdCard({ values }) {
     };
 
     return (
-        <div>
+        <div className='card-container'>
             { phdStructure }
             <button onClick={() => {setEditingPhd(!isEditingPhd)}}>
             {isEditingPhd
