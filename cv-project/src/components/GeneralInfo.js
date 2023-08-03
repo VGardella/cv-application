@@ -22,22 +22,28 @@ export default function PersonalInfo() {
                         <a href={personalInfo.img} target="_blank" rel="noreferrer">
                             <img src={personalInfo.img} alt='Profile' style={{ width: 200 }}/>
                         </a>
-                        <label>New profile picture: </label>
-                        <input name='img' value={personalInfo.img} onChange={handleInfo}></input>
                     </form>
                 </div>
                 <form className='info-container'>
-                    <label>Name: </label>
-                    <input name='name' value={personalInfo.name} onChange={handleInfo}></input>
-                    <br />
-                    <label>Age: </label>
-                    <input name='age' value={personalInfo.age} onChange={handleInfo}></input>
-                    <br />
-                    <label>DNI: </label>
-                    <input name='dni' value={personalInfo.dni} onChange={handleInfo}></input>
-                    <br />
-                    <label>Country: </label>
-                    <input name='country' value={personalInfo.country} onChange={handleInfo}></input>
+                    <h3 className='info-title'>About myself:</h3>
+                    <hr/>
+                    <div className="data-input">
+                        <label>Name: </label>
+                        <input name='name' value={personalInfo.name} onChange={handleInfo}></input>
+                        <br />
+                        <label>Age: </label>
+                        <input name='age' value={personalInfo.age} onChange={handleInfo}></input>
+                        <br />
+                        <label>DNI: </label>
+                        <input name='dni' value={personalInfo.dni} onChange={handleInfo}></input>
+                        <br />
+                        <label>Country: </label>
+                        <input name='country' value={personalInfo.country} onChange={handleInfo}></input>
+                    </div>
+                    <div className='img-input'>
+                        <label>New profile picture: </label>
+                        <input name='img' value={personalInfo.img} onChange={handleInfo}></input>
+                    </div>
                 </form>
             </div>
         )
@@ -48,14 +54,21 @@ export default function PersonalInfo() {
                     <img src={personalInfo.img} alt='Profile' style={{ width: 200 }}></img>
                 </div>
                 <div className='info-container'>
-                    <label>Name: </label> {personalInfo.name}
-                    <br/>
-                    <label>Age: </label> {personalInfo.age}
-                    <br/>
-                    <label>DNI: </label> {personalInfo.dni}
-                    <br/>
-                    <label>Country: </label> {personalInfo.country}
-                    <br/>
+                    <h3 className='info-title'>About myself:</h3>
+                    <hr/>
+                    <div className="data-input">
+                        <label>Name: </label> {personalInfo.name}
+                        <br/>
+                        <label>Age: </label> {personalInfo.age}
+                        <br/>
+                        <label>DNI: </label> {personalInfo.dni}
+                        <br/>
+                        <label>Country: </label> {personalInfo.country}
+                        <br/>
+                    </div>
+                    <div className='img-input'>
+
+                    </div>
                 </div>
             </div>
             
@@ -75,16 +88,18 @@ export default function PersonalInfo() {
     };
 
     return (
-        <div className='principal'>
-            <h1 className='principal-title'>Welcome to my Page!</h1>
-            <hr/>
-            { infoStructure }
-            <button className='edit-button' onClick={handleEdit}>
-            {isEditing 
-            ? 'Save Information'
-            : 'Edit Information'
-            }
-            </button>
+        <div>
+            <div className='principal'>
+                <h1 className='principal-title'>Welcome to my Page!</h1>
+                <hr/>
+                { infoStructure }
+                <button className='edit-button' onClick={handleEdit}>
+                {isEditing
+                ? 'Save Information'
+                : 'Edit Information'
+                }
+                </button>
+            </div>
         </div>
     );
 }

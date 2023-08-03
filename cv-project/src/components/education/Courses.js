@@ -74,12 +74,14 @@ export function Courses() {
     }]
 
     return (
-        <div className='cert-container'>
-            <hr />
-            <h2 className='section-title'>Courses:</h2>
-            {courses.map(item => 
-                <CoursesCard key={item.id} values={item} />    
-            )}
+        <div>
+            <div className='principal'>
+                <hr />
+                <h2 className='section-title'>Courses:</h2>
+                {courses.map(item =>
+                    <CoursesCard key={item.id} values={item} />
+                )}
+            </div>
         </div>
     );
 }

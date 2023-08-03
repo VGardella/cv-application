@@ -84,12 +84,14 @@ export function PersonalProjects() {
     }];
 
     return (
-        <div className='project-container'>
-            <hr />
-            <h2 className='section-title'>Projects</h2>
-            {projects.map(item => 
-                <ProjectCard key={item.id} values={item} />
-            )}
+        <div>
+            <div className='principal'>
+                <hr />
+                <h2 className='section-title'>Projects</h2>
+                {projects.map(item =>
+                    <ProjectCard key={item.id} values={item} />
+                )}
+            </div>
         </div>
         
     );

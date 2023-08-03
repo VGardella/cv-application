@@ -16,13 +16,15 @@ export function Certifications() {
     }]
 
     return (
-        <div className='cert-container'>
-            <hr />
-            <h2 className='section-title'>Certifications</h2>
-            {certif.map(item =>
-                <CertifCard key={item.id} values={item} />
-            )}
-        </div> 
+        <div>
+            <div className='principal'>
+                <hr />
+                <h2 className='section-title'>Certifications</h2>
+                {certif.map(item =>
+                    <CertifCard key={item.id} values={item} />
+                )}
+            </div>
+        </div>
     );
 };
 

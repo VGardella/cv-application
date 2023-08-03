@@ -13,12 +13,14 @@ export function WorkExperience() {
     }]
 
     return (
-        <div className='works-container'>
-            <hr />
-            <h2 className='section-title'>Work Experience</h2>
-            {work.map(item =>
-                <WorkCard key={item.id} values={item} />    
-            )}
+        <div>
+            <div className='principal'>
+                <hr />
+                <h2 className='section-title'>Work Experience</h2>
+                {work.map(item =>
+                    <WorkCard key={item.id} values={item} />
+                )}
+            </div>
         </div>
     );
 };
