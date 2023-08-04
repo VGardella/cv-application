@@ -89,16 +89,14 @@ export default function PersonalInfo() {
     };
 
     return (
-        <div>
-            <div className='principal' id='general-information'>
-                { infoStructure }
-                <button className='edit-button' onClick={handleEdit}>
-                {isEditing
-                ? 'Save Information'
-                : 'Edit Information'
-                }
-                </button>
-            </div>
+        <div className='principal' id='general-information'>
+            { infoStructure }
+            <button className='edit-button' onClick={handleEdit}>
+            {isEditing
+            ? 'Save Information'
+            : 'Edit Information'
+            }
+            </button>
         </div>
     );
 }
