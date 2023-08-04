@@ -78,6 +78,17 @@ body {
   padding: 25px 70px;
 }
 
+.principal-title{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.principal-title img{
+  width: 60px;
+  height: 60px;
+}
+
 /* PERSONAL INFORMATION */
 
 #general-information{
@@ -135,4 +146,3 @@ body {
 }
 
 /* EDUCATION */
-
