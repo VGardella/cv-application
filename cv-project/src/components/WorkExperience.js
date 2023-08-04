@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function WorkExperience() {
+export default function WorkExperience() {
     const work = [{
         id: 0,
         title: 'Assistant Professor',
@@ -15,7 +15,7 @@ export function WorkExperience() {
     return (
         <div>
             <hr />
-            <h1 className='section-title'>Work Experience</h1>
+            <h1 className='section-title' id='work'>Work Experience</h1>
             <div className='principal'>
                 {work.map(item =>
                     <WorkCard key={item.id} values={item} />

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function PersonalProjects() {
+export default function PersonalProjects() {
     const projects = [{
         id: 0,
         title: 'Film Library',
@@ -86,7 +86,7 @@ export function PersonalProjects() {
     return (
         <div>
             <hr />
-            <h1 className='section-title'>Projects</h1>
+            <h1 className='section-title' id='proj'>Projects</h1>
             <div className='principal'>
                 {projects.map(item =>
                     <ProjectCard key={item.id} values={item} />

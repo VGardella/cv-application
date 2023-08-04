@@ -5,7 +5,7 @@ import { Degrees } from "./education/Degrees";
 export default function FormalEducation() {
     return (
         <div>
-            <h1 className='principal-title'>Education</h1>
+            <h1 className='principal-title' id='edu'>Education</h1>
             <Degrees />
             <Certifications />
             <Courses />
