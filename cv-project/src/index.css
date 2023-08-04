@@ -24,7 +24,6 @@ body {
 
 .body{
   margin: 100px 200px;
-  padding: 70px;
   border: 1px solid lightgray;
   background-color: white;
   box-shadow: lightgray 10px 10px 10px;
@@ -64,4 +63,69 @@ body {
   text-decoration: none;
   color: inherit;
   border-bottom: 2px solid white;
+}
+
+/* PERSONAL INFORMATION */
+
+.principal-container{
+  display: flex;
+  padding: 0 30px;
+  justify-content: space-evenly;
+}
+
+#general-information{
+  display: flex;
+  flex-direction: column;
+  padding: 25px 70px;
+  margin: 70px 0;
+  background-color: whitesmoke;
+}
+
+#general-information button{
+  width: 140px;
+  height: 30px;
+  align-self: center;
+  margin: 10px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #33302d;
+  color: #c4c2c0;
+  font-weight: bolder;
+}
+
+.info-container{
+  width: 400px;
+  font-size: 17px;
+}
+
+.info-title{
+  color: #33302d;
+  font-size: 25px;
+  margin: 12px 0;
+  text-transform: uppercase;
+}
+
+.info-container hr{
+  border: 2px dashed #7c746b;
+}
+
+.info-container label{
+  font-weight: 500;
+  color: #33302d;
+}
+
+.info-container .img-input{
+  margin-top: 3px;
+}
+
+.info-container .data-input{
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+}
+
+.entry{
+  display: flex;
+  gap: 10px;
+  padding: 1px;
 }
