@@ -3,9 +3,9 @@ import { useState } from 'react';
 export default function PersonalInfo() {
     let info = { 
         name: 'Victoria Macarena Gardella Ruiz',
-        age: 28,
-        dni: '38.691.578',
-        country: 'Argentinian',
+        mail: 'v.gardella.ruiz@gmail.com',
+        phone: '+549 (221) 3XX XXXX',
+        location: 'Buenos Aires, Argentina',
         img: 'https://i.imgur.com/CjepkMr.png'
     }
 
@@ -31,14 +31,14 @@ export default function PersonalInfo() {
                         <label>Name: </label>
                         <input name='name' value={personalInfo.name} onChange={handleInfo}></input>
                         <br />
-                        <label>Age: </label>
-                        <input name='age' value={personalInfo.age} onChange={handleInfo}></input>
+                        <label>Mail: </label>
+                        <input name='mail' value={personalInfo.mail} onChange={handleInfo}></input>
                         <br />
-                        <label>DNI: </label>
-                        <input name='dni' value={personalInfo.dni} onChange={handleInfo}></input>
+                        <label>Phone: </label>
+                        <input name='phone' value={personalInfo.phone} onChange={handleInfo}></input>
                         <br />
-                        <label>Country: </label>
-                        <input name='country' value={personalInfo.country} onChange={handleInfo}></input>
+                        <label>Location: </label>
+                        <input name='location' value={personalInfo.location} onChange={handleInfo}></input>
                     </div>
                     <div className='img-input'>
                         <label>New profile picture: </label>
@@ -59,11 +59,11 @@ export default function PersonalInfo() {
                     <div className="data-input">
                         <label>Name: </label> {personalInfo.name}
                         <br/>
-                        <label>Age: </label> {personalInfo.age}
+                        <label>Mail: </label> {personalInfo.mail}
                         <br/>
-                        <label>DNI: </label> {personalInfo.dni}
+                        <label>Phone: </label> {personalInfo.phone}
                         <br/>
-                        <label>Country: </label> {personalInfo.country}
+                        <label>Location: </label> {personalInfo.location}
                         <br/>
                     </div>
                     <div className='img-input'>
@@ -89,7 +89,7 @@ export default function PersonalInfo() {
 
     return (
         <div>
-            <div className='principal'>
+            <div className='principal' id='general-information'>
                 { infoStructure }
                 <button className='edit-button' onClick={handleEdit}>
                 {isEditing
