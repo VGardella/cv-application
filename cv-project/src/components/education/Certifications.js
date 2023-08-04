@@ -54,7 +54,9 @@ function CertifCard({ values }) {
                         </a>
                     </div> */}
                     <div class="button-container">
-                        <button className='img-button'>Go to Certificate</button>
+                        <a href={certifications.img} target="_blank" rel="noreferrer">
+                            <button className='img-button'>Go to Certificate</button>
+                        </a>
                         <button className='edit-button' onClick={() => setEditing(!isEditing)}>
                         {isEditing
                         ? 'Save Information'
@@ -95,7 +97,9 @@ function CertifCard({ values }) {
                         </form>
                     </div> */}
                     <div class="button-container">
-                        <button className='img-button'>Go to Certificate</button>
+                        <a href={certifications.img} target="_blank" rel="noreferrer">
+                            <button className='img-button'>Go to Certificate</button>
+                        </a>
                         <button className='edit-button' onClick={() => setEditing(!isEditing)}>
                         {isEditing
                         ? 'Save Information'
