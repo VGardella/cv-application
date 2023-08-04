@@ -101,6 +101,16 @@ body {
   font-weight: bolder;
 }
 
+.section-title{
+  display: list-item;
+  list-style-position: inside;
+}
+
+.card-container{
+  display: flex;
+  justify-content: space-between;
+}
+
 /* PERSONAL INFORMATION */
 
 #general-information{
@@ -143,6 +153,11 @@ body {
   display: flex;
   gap: 10px;
   padding: 1px;
+}
+
+.entry label{
+  font-weight: 500;
+  color: #33302d;
 }
 
 /* EDUCATION */
