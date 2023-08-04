@@ -28,17 +28,22 @@ export default function PersonalInfo() {
                     <h3 className='info-title' id='personal'>About myself:</h3>
                     <hr/>
                     <div className="data-input">
-                        <label>Name: </label>
-                        <input name='name' value={personalInfo.name} onChange={handleInfo}></input>
-                        <br />
-                        <label>Mail: </label>
-                        <input name='mail' value={personalInfo.mail} onChange={handleInfo}></input>
-                        <br />
-                        <label>Phone: </label>
-                        <input name='phone' value={personalInfo.phone} onChange={handleInfo}></input>
-                        <br />
-                        <label>Location: </label>
-                        <input name='location' value={personalInfo.location} onChange={handleInfo}></input>
+                        <div className="entry">
+                            <label>Name: </label>
+                            <input name='name' value={personalInfo.name} onChange={handleInfo}></input>
+                        </div>
+                        <div className="entry">
+                            <label>Mail: </label>
+                            <input name='mail' value={personalInfo.mail} onChange={handleInfo}></input>
+                        </div>
+                        <div className="entry">
+                            <label>Phone: </label>
+                            <input name='phone' value={personalInfo.phone} onChange={handleInfo}></input>
+                        </div>
+                        <div className="entry">
+                            <label>Location: </label>
+                            <input name='location' value={personalInfo.location} onChange={handleInfo}></input>
+                        </div>
                     </div>
                     <div className='img-input'>
                         <label>New profile picture: </label>
@@ -57,14 +62,10 @@ export default function PersonalInfo() {
                     <h3 className='info-title' id='personal'>About myself:</h3>
                     <hr/>
                     <div className="data-input">
-                        <label>Name: </label> {personalInfo.name}
-                        <br/>
-                        <label>Mail: </label> {personalInfo.mail}
-                        <br/>
-                        <label>Phone: </label> {personalInfo.phone}
-                        <br/>
-                        <label>Location: </label> {personalInfo.location}
-                        <br/>
+                        <div className="entry"><label>Name: </label> {personalInfo.name}</div>
+                        <div className="entry"><label>Mail: </label> {personalInfo.mail}</div>
+                        <div className="entry"><label>Phone: </label> {personalInfo.phone}</div>
+                        <div className="entry"><label>Location: </label> {personalInfo.location}</div>
                     </div>
                     <div className='img-input'>
 
