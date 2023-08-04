@@ -74,10 +74,10 @@ export function Courses() {
     }]
 
     return (
-        <div>
-            <div className='principal'>
-                <hr />
-                <h2 className='section-title'>Courses:</h2>
+        <div className='edu-container' id='courses-container'>
+            <h2 className='section-title'>Courses:</h2>
+            <hr />
+            <div id="courses-cards">
                 {courses.map(item =>
                     <CoursesCard key={item.id} values={item} />
                 )}
@@ -97,9 +97,7 @@ function CoursesCard({ values }) {
                 <div className="card-container">
                     <div className='info-container'>
                     <b>Title: </b> {courses.title}
-                    <br/>
                     <b>Institution: </b> {courses.institution}
-                    <br/>
                     <b>Date: </b> {courses.date}
                     </div>
                     <div className="img-container">
