@@ -23,7 +23,8 @@ body {
 }
 
 .body{
-  margin: 100px 200px;
+  margin: 100px auto;
+  width: 1000px;
   border: 1px solid lightgray;
   background-color: white;
   box-shadow: lightgray 10px 10px 10px;
@@ -65,8 +66,6 @@ body {
   border-bottom: 2px solid white;
 }
 
-/* PERSONAL INFORMATION */
-
 .principal-container{
   display: flex;
   padding: 0 30px;
@@ -78,6 +77,8 @@ body {
   flex-direction: column;
   padding: 25px 70px;
 }
+
+/* PERSONAL INFORMATION */
 
 #general-information{
   background-color: whitesmoke;
@@ -132,3 +133,6 @@ body {
   gap: 10px;
   padding: 1px;
 }
+
+/* EDUCATION */
+
