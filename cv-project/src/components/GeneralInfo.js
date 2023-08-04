@@ -25,7 +25,7 @@ export default function PersonalInfo() {
                     </form>
                 </div>
                 <form className='info-container'>
-                    <h3 className='info-title'>About myself:</h3>
+                    <h3 className='info-title' id='personal'>About myself:</h3>
                     <hr/>
                     <div className="data-input">
                         <label>Name: </label>
@@ -54,7 +54,7 @@ export default function PersonalInfo() {
                     <img src={personalInfo.img} alt='Profile' style={{ width: 200 }}></img>
                 </div>
                 <div className='info-container'>
-                    <h3 className='info-title'>About myself:</h3>
+                    <h3 className='info-title' id='personal'>About myself:</h3>
                     <hr/>
                     <div className="data-input">
                         <label>Name: </label> {personalInfo.name}
