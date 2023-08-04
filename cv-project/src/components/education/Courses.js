@@ -96,9 +96,9 @@ function CoursesCard({ values }) {
             <div key={courses.id}>
                 <div className="card-container">
                     <div className='info-container'>
-                    <b>Title: </b> {courses.title}
-                    <b>Institution: </b> {courses.institution}
-                    <b>Date: </b> {courses.date}
+                    <div className="entry"><label>Title: </label> {courses.title}</div>
+                    <div className="entry"><label>Institution: </label> {courses.institution}</div>
+                    <div className="entry"><label>Date: </label> {courses.date}</div>
                     </div>
                     <div className="img-container">
                     {courses.mini === null ? (
@@ -131,14 +131,18 @@ function CoursesCard({ values }) {
             <div className="card-container">
                 <div className='form-container'>
                     <form className='cv-form'>
-                        <label>Title: </label>
-                        <input name='title' value={courses.title} onChange={handleInfo}></input>
-                        <br />
-                        <label>Institution: </label>
-                        <input name='institution' value={courses.institution} onChange={handleInfo}></input>
-                        <br />
-                        <label>Date: </label>
-                        <input name='date' value={courses.date} onChange={handleInfo}></input>
+                        <div className="entry">
+                            <label>Title: </label>
+                            <input name='title' value={courses.title} onChange={handleInfo}></input>
+                        </div>
+                        <div className="entry">
+                            <label>Institution: </label>
+                            <input name='institution' value={courses.institution} onChange={handleInfo}></input>
+                        </div>
+                        <div className="entry">
+                            <label>Date: </label>
+                            <input name='date' value={courses.date} onChange={handleInfo}></input>
+                        </div>
                     </form>
                 </div>
                 <div className="img-container">
