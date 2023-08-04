@@ -19,16 +19,18 @@ export function Degrees() {
         };
 
     return (
-        <div>
-            <div className='principal'>
-                <h2 className='section-title'>Degrees</h2>
-                <hr/>
-                <h3 className='section-title'>Undergraduate Degree</h3>
+        <div id='degree-container'>
+            <h2 className='section-title'>Degrees</h2>
+            <hr/>
+            <h3 className='section-title'>Undergraduate Degree</h3>
+                <div id="bach-container">
                     <BachelorCard values={bachelor} />
-                <br />
-                <h3 className='section-title'>Postgraduate Degree</h3>
+                </div>
+            <br />
+            <h3 className='section-title'>Postgraduate Degree</h3>
+                <div id="phd-container">
                     <PhdCard values={doctorate} />
-            </div>
+                </div>
         </div>
     );
 }
@@ -80,7 +82,7 @@ function BachelorCard({ values }) {
     return (
         <div className='card-container'>
             { bachStructure }
-            <button onClick={() => {setEditingBach(!isEditingBach)}}>
+            <button className='edit-button' onClick={() => {setEditingBach(!isEditingBach)}}>
             {isEditingBach
             ? 'Save Information'
             : 'Edit Information'
@@ -144,7 +146,7 @@ function PhdCard({ values }) {
     return (
         <div className='card-container'>
             { phdStructure }
-            <button onClick={() => {setEditingPhd(!isEditingPhd)}}>
+            <button className='edit-button' onClick={() => {setEditingPhd(!isEditingPhd)}}>
             {isEditingPhd
             ? 'Save Information'
             : 'Edit Information'
