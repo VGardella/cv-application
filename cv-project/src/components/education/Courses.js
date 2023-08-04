@@ -96,11 +96,11 @@ function CoursesCard({ values }) {
             <div key={courses.id}>
                 <div className="card-container">
                     <div className='info-container'>
-                    <div className="entry"><label>Title: </label> {courses.title}</div>
-                    <div className="entry"><label>Institution: </label> {courses.institution}</div>
-                    <div className="entry"><label>Date: </label> {courses.date}</div>
+                        <div className="entry"><label>Title: </label> {courses.title}</div>
+                        <div className="entry"><label>Institution: </label> {courses.institution}</div>
+                        <div className="entry"><label>Date: </label> {courses.date}</div>
                     </div>
-                    <div className="img-container">
+                    {/* <div className="img-container">
                     {courses.mini === null ? (
                         <p>No Certificate</p>
                     ) : (
@@ -115,13 +115,18 @@ function CoursesCard({ values }) {
                             </a>
                         </div> 
                     )}
+                    </div> */}
+                    <div className="button-container">
+                        <a href={courses.img} target="_blank" rel="noreferrer">
+                            <button className='img-button'>Go to Course</button>
+                        </a>
+                        <button className='edit-button' onClick={() => setEditing(!isEditing)}>
+                        {isEditing
+                        ? 'Save Information'
+                        : 'Edit Information'
+                        }
+                        </button>
                     </div>
-                    <button onClick={handleEditing}>
-                    {isEditing
-                    ? 'Save Information'
-                    : 'Edit Information'
-                    }
-                    </button>
                 </div>
                 <br/>
             </div>
@@ -145,7 +150,7 @@ function CoursesCard({ values }) {
                         </div>
                     </form>
                 </div>
-                <div className="img-container">
+                {/* <div className="img-container">
                     <form className='form-container'>
                         <img
                             src={courses.mini}
@@ -159,13 +164,18 @@ function CoursesCard({ values }) {
                         <label>New link:</label>
                         <input name='img' value={courses.img} onChange={handleInfo}></input>
                     </form>
-                </div>
-                <button onClick={handleEditing}>
-                {isEditing
-                ? 'Save Information'
-                : 'Edit Information'
-                }
-                </button>
+                </div> */}
+                    <div className="button-container">
+                        <a href={courses.img} target="_blank" rel="noreferrer">
+                            <button className='img-button'>Go to Course</button>
+                        </a>
+                        <button className='edit-button' onClick={() => setEditing(!isEditing)}>
+                        {isEditing
+                        ? 'Save Information'
+                        : 'Edit Information'
+                        }
+                        </button>
+                    </div>
             </div>
             <br/>
         </div>
