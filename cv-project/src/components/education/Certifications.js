@@ -44,7 +44,7 @@ function CertifCard({ values }) {
                         <br/>
                         <b>Date: </b> {certifications.date}
                     </div>
-                    <div className="img-container">
+                    {/* <div className="img-container">
                         <a href={certifications.img} target="_blank" rel="noreferrer">
                             <img
                                 src={certifications.img}
@@ -52,13 +52,16 @@ function CertifCard({ values }) {
                                 style={{ width: 200 }}
                             />
                         </a>
+                    </div> */}
+                    <div class="button-container">
+                        <button className='img-button'>Go to Certificate</button>
+                        <button className='edit-button' onClick={() => setEditing(!isEditing)}>
+                        {isEditing
+                        ? 'Save Information'
+                        : 'Edit Information'
+                        }
+                        </button>
                     </div>
-                    <button className='edit-button' onClick={() => setEditing(!isEditing)}>
-                    {isEditing
-                    ? 'Save Information'
-                    : 'Edit Information'
-                    }
-                    </button>
                 </div>
                 <br/>
             </div>;
@@ -78,7 +81,7 @@ function CertifCard({ values }) {
                             <input name='date' value={certifications.date} onChange={handleInfo}></input>
                         </form>
                     </div>
-                    <div className="img-container">
+                    {/* <div className="img-container">
                         <form className='form-container'>
                             <a href={certifications.img} target="_blank" rel="noreferrer">
                                 <img
@@ -90,13 +93,16 @@ function CertifCard({ values }) {
                             <label>New image:</label>
                             <input name='img' value={certifications.img} onChange={handleInfo}></input>
                         </form>
+                    </div> */}
+                    <div class="button-container">
+                        <button className='img-button'>Go to Certificate</button>
+                        <button className='edit-button' onClick={() => setEditing(!isEditing)}>
+                        {isEditing
+                        ? 'Save Information'
+                        : 'Edit Information'
+                        }
+                        </button>
                     </div>
-                    <button className='edit-button' onClick={handelEditing}>
-                    {isEditing
-                    ? 'Save Information'
-                    : 'Edit Information'
-                    }
-                    </button>
                 </div>
                 <br/>
             </div>
