@@ -30,41 +30,7 @@ body {
   box-shadow: lightgray 10px 10px 10px;
 }
 
-.my-name{
-  margin: 0;
-  font-weight: bold;
-  font-size: 30px;
-}
-
-.header-bottom{
-  display: flex;
-  justify-content: space-between;
-  text-transform: uppercase;
-}
-
-.my-description{
-  font-size: 18px;
-  font-weight: 500;
-  margin: 0;
-}
-
-.bottom-description,
-.nav-bar{
-  display: flex;
-  align-items: center;
-  margin: 0;
-}
-
-.nav-bar{
-  gap: 10px;
-}
-
-.nav-bar a{
-  padding: 10px;
-  text-decoration: none;
-  color: inherit;
-  border-bottom: 2px solid white;
-}
+/* GENERAL */
 
 .principal-container{
   display: flex;
@@ -109,6 +75,44 @@ body {
 .card-container{
   display: flex;
   justify-content: space-between;
+}
+
+/* HEADER */
+
+.my-name{
+  margin: 0;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.header-bottom{
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.my-description{
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.bottom-description,
+.nav-bar{
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.nav-bar{
+  gap: 10px;
+}
+
+.nav-bar a{
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 2px solid white;
 }
 
 /* PERSONAL INFORMATION */
@@ -161,3 +165,7 @@ body {
 }
 
 /* EDUCATION */
+
+.edu-container{
+  margin-bottom: 50px;
+}
