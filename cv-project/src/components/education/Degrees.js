@@ -19,15 +19,15 @@ export function Degrees() {
         };
 
     return (
-        <div id='degree-container'>
+        <div className='edu-container' id='degree-container'>
             <h2 className='section-title'>Degrees</h2>
             <hr/>
-            <h3 className='section-title'>Undergraduate Degree</h3>
+            <h3 className='subsection-title'>Undergraduate Degree</h3>
                 <div id="bach-container">
                     <BachelorCard values={bachelor} />
                 </div>
             <br />
-            <h3 className='section-title'>Postgraduate Degree</h3>
+            <h3 className='subsection-title'>Postgraduate Degree</h3>
                 <div id="phd-container">
                     <PhdCard values={doctorate} />
                 </div>
