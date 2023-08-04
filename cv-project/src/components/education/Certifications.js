@@ -38,11 +38,9 @@ function CertifCard({ values }) {
             <div>
                 <div className="card-container">
                     <div className='info-container'>
-                        <b>Title: </b> {certifications.title}
-                        <br/>
-                        <b>Institution: </b> {certifications.institution}
-                        <br/>
-                        <b>Date: </b> {certifications.date}
+                        <div className="entry"><label>Title: </label> {certifications.title}</div>
+                        <div className="entry"><label>Institution: </label> {certifications.institution}</div>
+                        <div className="entry"><label>Date: </label> {certifications.date}</div>
                     </div>
                     {/* <div className="img-container">
                         <a href={certifications.img} target="_blank" rel="noreferrer">
@@ -53,7 +51,7 @@ function CertifCard({ values }) {
                             />
                         </a>
                     </div> */}
-                    <div class="button-container">
+                    <div className="button-container">
                         <a href={certifications.img} target="_blank" rel="noreferrer">
                             <button className='img-button'>Go to Certificate</button>
                         </a>
@@ -73,14 +71,18 @@ function CertifCard({ values }) {
                 <div className="card-container">
                     <div className='form-container'>
                         <form className='cv-form'>
-                            <label>Title: </label>
-                            <input name='title' value={certifications.title} onChange={handleInfo}></input>
-                            <br />
-                            <label>Institution: </label>
-                            <input name='institution' value={certifications.institution} onChange={handleInfo}></input>
-                            <br />
-                            <label>Date: </label>
-                            <input name='date' value={certifications.date} onChange={handleInfo}></input>
+                            <div className="entry">
+                                <label>Title: </label>
+                                <input name='title' value={certifications.title} onChange={handleInfo}></input>
+                            </div>
+                            <div className="entry">
+                                <label>Institution: </label>
+                                <input name='institution' value={certifications.institution} onChange={handleInfo}></input>
+                            </div>
+                            <div className="entry">
+                                <label>Date: </label>
+                                <input name='date' value={certifications.date} onChange={handleInfo}></input>
+                            </div>
                         </form>
                     </div>
                     {/* <div className="img-container">
@@ -96,7 +98,7 @@ function CertifCard({ values }) {
                             <input name='img' value={certifications.img} onChange={handleInfo}></input>
                         </form>
                     </div> */}
-                    <div class="button-container">
+                    <div className="button-container">
                         <a href={certifications.img} target="_blank" rel="noreferrer">
                             <button className='img-button'>Go to Certificate</button>
                         </a>
