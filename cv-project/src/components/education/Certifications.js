@@ -16,10 +16,10 @@ export function Certifications() {
     }]
 
     return (
-        <div>
-            <div className='principal'>
-                <hr />
-                <h2 className='section-title'>Certifications</h2>
+        <div className='edu-container' id='certification-container'>
+            <h2 className='section-title'>Certifications</h2>
+            <hr />
+            <div id="certification-cards">
                 {certif.map(item =>
                     <CertifCard key={item.id} values={item} />
                 )}
@@ -53,7 +53,7 @@ function CertifCard({ values }) {
                             />
                         </a>
                     </div>
-                    <button onClick={() => setEditing(!isEditing)}>
+                    <button className='edit-button' onClick={() => setEditing(!isEditing)}>
                     {isEditing
                     ? 'Save Information'
                     : 'Edit Information'
@@ -91,7 +91,7 @@ function CertifCard({ values }) {
                             <input name='img' value={certifications.img} onChange={handleInfo}></input>
                         </form>
                     </div>
-                    <button onClick={handelEditing}>
+                    <button className='edit-button' onClick={handelEditing}>
                     {isEditing
                     ? 'Save Information'
                     : 'Edit Information'
