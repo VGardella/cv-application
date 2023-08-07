@@ -114,18 +114,15 @@ function ProjectCard({ values }) {
                         <img
                             src={projects.img}
                             alt={projects.title}
-                            style={{ width: 350 }}
+                            style={{ height: 200 }}
                         />
                     </a>
                 </div>
                 <div className="proj-container">
                     <div className='info-container'>
-                        <b>Title: </b> {projects.title}
-                        <br/>
-                        <b>Description: </b> {projects.description}
-                        <br/>
-                        <b>Languages: </b> {projects.languages}
-                        <br/>
+                        <div className="entry"><label>Title: </label> {projects.title}</div>
+                        <div className="entry"><label>Description: </label> {projects.description}</div>
+                        <div className="entry"><label>Languages: </label> {projects.languages}</div>
                     </div>
                     <div className="links-container">
                         <a href={projects.repository} target="_blank" rel="noreferrer">
@@ -136,7 +133,6 @@ function ProjectCard({ values }) {
                         </a>
                     </div>
                 </div>
-                <br/>
                 <button onClick={handleEditing}>
                 {isEditing
                 ? 'Save Information'
@@ -153,25 +149,33 @@ function ProjectCard({ values }) {
                 <div className="proj-container">
                     <div className='form-container'>
                         <form className='cv-form'>
-                            <label>Title: </label>
-                            <input name='title' value={projects.title} onChange={handleInfo}></input>
-                            <br />
-                            <label>Description: </label>
-                            <input name='description' value={projects.description} onChange={handleInfo}></input>
-                            <br />
-                            <label>Languages: </label>
-                            <input name='languages' value={projects.languages} onChange={handleInfo}></input>
+                            <div className="entry">
+                                <label>Title: </label>
+                                <input name='title' value={projects.title} onChange={handleInfo}></input>
+                            </div>
+                            <div className="entry">
+                                <label>Description: </label>
+                                <input name='description' value={projects.description} onChange={handleInfo}></input>
+                            </div>
+                            <div className="entry">
+                                <label>Languages: </label>
+                                <input name='languages' value={projects.languages} onChange={handleInfo}></input>
+                            </div>
                         </form>
                     </div>
                     <div className="links-container">
-                        <a href={projects.repository} target="_blank" rel="noreferrer">
-                            <label>Repository:</label>
-                            <input name='repository' value={projects.repository} onChange={handleInfo}></input>
-                        </a>
-                        <a href={projects.livepreview} target="_blank" rel="noreferrer">
-                            <label>Live Preview:</label>
-                            <input name='livepreview' value={projects.livepreview} onChange={handleInfo}></input>
-                        </a>
+                        <div className="entry">
+                            <a href={projects.repository} target="_blank" rel="noreferrer">
+                                <label>Repository:</label>
+                                <input name='repository' value={projects.repository} onChange={handleInfo}></input>
+                            </a>
+                        </div>
+                        <div className="entry">
+                            <a href={projects.livepreview} target="_blank" rel="noreferrer">
+                                <label>Live Preview:</label>
+                                <input name='livepreview' value={projects.livepreview} onChange={handleInfo}></input>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <br/>
