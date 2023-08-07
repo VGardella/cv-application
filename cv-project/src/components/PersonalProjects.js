@@ -87,7 +87,7 @@ export default function PersonalProjects() {
         <div>
             <hr />
             <h1 className='section-title' id='proj'>Projects</h1>
-            <div className='principal'>
+            <div id='project-cards'>
                 {projects.map(item =>
                     <ProjectCard key={item.id} values={item} />
                 )}
