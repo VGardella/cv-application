@@ -90,7 +90,7 @@ export default function PersonalProjects() {
                 <h1 className='principal-title' id='proj'>Projects</h1>
             </div>
             <div className='project-container'>
-                <div id='project-cards'>
+                <div className='project-cards'>
                     {projects.map(item =>
                         <ProjectCard key={item.id} values={item} />
                     )}
@@ -108,13 +108,13 @@ function ProjectCard({ values }) {
 
     if (!isEditing) {
         projectList =  
-            <div key={projects.id}>
+            <div className='project-card' key={projects.id}>
                 <div className='img-proj-container'>
                     <a href={projects.img} target="_blank" rel="noreferrer">
                         <img
                             src={projects.img}
                             alt={projects.title}
-                            style={{ width: 400 }}
+                            style={{ width: 350 }}
                         />
                     </a>
                 </div>
@@ -146,7 +146,7 @@ function ProjectCard({ values }) {
             </div>
     } else {
         projectList =  
-            <div key={projects.id}>
+            <div className='project-card' key={projects.id}>
                 <div className='img-proj-container'>
                     <p>Filler text</p>
                 </div>
