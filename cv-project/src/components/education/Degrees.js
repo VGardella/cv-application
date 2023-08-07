@@ -26,7 +26,6 @@ export function Degrees() {
                 <div id="bach-container">
                     <BachelorCard values={bachelor} />
                 </div>
-            <br />
             <h3 className='subsection-title'>Postgraduate Degree</h3>
                 <div id="phd-container">
                     <PhdCard values={doctorate} />

@@ -128,7 +128,6 @@ function CoursesCard({ values }) {
                         </button>
                     </div>
                 </div>
-                <br/>
             </div>
     } else {
         coursesList = 
@@ -177,7 +176,6 @@ function CoursesCard({ values }) {
                         </button>
                     </div>
             </div>
-            <br/>
         </div>
     }
         

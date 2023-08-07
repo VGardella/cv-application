@@ -7,11 +7,8 @@ export default function Body() {
     return (
         <div className='body'>
             <PersonalInfo />
-            <br/>
             <FormalEducation />
-            <br/>
             <PersonalProjects />
-            <br/>
             <WorkExperience />
         </div>
     )

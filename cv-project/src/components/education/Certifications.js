@@ -63,7 +63,6 @@ function CertifCard({ values }) {
                         </button>
                     </div>
                 </div>
-                <br/>
             </div>;
     } else {
         certList = 
@@ -110,7 +109,6 @@ function CertifCard({ values }) {
                         </button>
                     </div>
                 </div>
-                <br/>
             </div>
     }
 
