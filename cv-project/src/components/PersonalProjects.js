@@ -124,21 +124,23 @@ function ProjectCard({ values }) {
                         <div className="entry"><label>Description: </label> {projects.description}</div>
                         <div className="entry"><label>Languages: </label> {projects.languages}</div>
                     </div>
-                    <div className="links-container">
-                        <a href={projects.repository} target="_blank" rel="noreferrer">
-                            <button>Go to Repository!</button>
-                        </a>
-                        <a href={projects.livepreview} target="_blank" rel="noreferrer">
-                            <button>Go to Live Preview!</button>
-                        </a>
+                    <div className='buttons'>
+                        <div className="links-container">
+                            <a href={projects.repository} target="_blank" rel="noreferrer">
+                                <button>Go to Repository!</button>
+                            </a>
+                            <a href={projects.livepreview} target="_blank" rel="noreferrer">
+                                <button>Go to Live Preview!</button>
+                            </a>
+                        </div>
+                        <button className='edit-button' onClick={handleEditing}>
+                        {isEditing
+                        ? 'Save Information'
+                        : 'Edit Information'
+                        }
+                        </button>
                     </div>
                 </div>
-                <button onClick={handleEditing}>
-                {isEditing
-                ? 'Save Information'
-                : 'Edit Information'
-                }
-                </button>
             </div>
     } else {
         projectList =  
@@ -163,28 +165,30 @@ function ProjectCard({ values }) {
                             </div>
                         </form>
                     </div>
-                    <div className="links-container">
-                        <div className="entry">
-                            <a href={projects.repository} target="_blank" rel="noreferrer">
-                                <label>Repository:</label>
-                                <input name='repository' value={projects.repository} onChange={handleInfo}></input>
-                            </a>
+                    <div className="buttons">
+                        <div className="links-container">
+                            <div className="entry">
+                                <a href={projects.repository} target="_blank" rel="noreferrer">
+                                    <label>Repository:</label>
+                                    <input name='repository' value={projects.repository} onChange={handleInfo}></input>
+                                </a>
+                            </div>
+                            <div className="entry">
+                                <a href={projects.livepreview} target="_blank" rel="noreferrer">
+                                    <label>Live Preview:</label>
+                                    <input name='livepreview' value={projects.livepreview} onChange={handleInfo}></input>
+                                </a>
+                            </div>
                         </div>
-                        <div className="entry">
-                            <a href={projects.livepreview} target="_blank" rel="noreferrer">
-                                <label>Live Preview:</label>
-                                <input name='livepreview' value={projects.livepreview} onChange={handleInfo}></input>
-                            </a>
-                        </div>
+                        <button className='edit-button' onClick={handleEditing}>
+                        {isEditing
+                        ? 'Save Information'
+                        : 'Edit Information'
+                        }
+                        </button>
                     </div>
                 </div>
                 <br/>
-                <button onClick={handleEditing}>
-                {isEditing
-                ? 'Save Information'
-                : 'Edit Information'
-                }
-                </button>
             </div>
     }
 
