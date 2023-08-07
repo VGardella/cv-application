@@ -84,13 +84,17 @@ export default function PersonalProjects() {
     }];
 
     return (
-        <div>
-            <hr />
-            <h1 className='section-title' id='proj'>Projects</h1>
-            <div id='project-cards'>
-                {projects.map(item =>
-                    <ProjectCard key={item.id} values={item} />
-                )}
+        <div className='principal' id='personal-projects'>
+            <div className='principal-title'>
+                <img src='https://i.imgur.com/Zt1h3qD.png' alt='Icon'></img>
+                <h1 className='principal-title' id='proj'>Projects</h1>
+            </div>
+            <div className='project-container'>
+                <div id='project-cards'>
+                    {projects.map(item =>
+                        <ProjectCard key={item.id} values={item} />
+                    )}
+                </div>
             </div>
         </div>
         

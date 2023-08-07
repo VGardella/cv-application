@@ -4,8 +4,11 @@ import { Degrees } from "./education/Degrees";
 
 export default function FormalEducation() {
     return (
-        <div>
-            <h1 className='principal-title' id='edu'>Education</h1>
+        <div className="principal" id="complete-education">
+            <div className='principal-title'>
+                <img src='https://i.imgur.com/AgJEaK0.png' alt='Icon'></img>
+                <h1 className='principal-title' id='edu'>Education</h1>
+            </div>
             <Degrees />
             <Certifications />
             <Courses />

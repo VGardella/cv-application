@@ -13,13 +13,17 @@ export default function WorkExperience() {
     }]
 
     return (
-        <div>
-            <hr />
-            <h1 className='section-title' id='work'>Work Experience</h1>
-            <div className='principal'>
-                {work.map(item =>
-                    <WorkCard key={item.id} values={item} />
-                )}
+        <div className='principal' id='work-experience'>
+            <div className='principal-title'>
+                <img src='https://i.imgur.com/h4NDH4j.png' alt='Icon'></img>
+                <h1 className='principal-title' id='work'>Work Experience</h1>
+            </div>
+            <div className='work-container'>
+                <div id="work-cards">
+                    {work.map(item =>
+                        <WorkCard key={item.id} values={item} />
+                    )}
+                </div>
             </div>
         </div>
     );
