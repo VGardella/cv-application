@@ -16,8 +16,8 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px 30px 20px 30px;
-  background-color: #a59a8e;
-  color: aliceblue;
+  background-color: #33302d;
+  color: #a59a8e;
   position: sticky;
   top: 0;
 }
@@ -25,7 +25,7 @@ body {
 .body{
   margin: 100px auto;
   width: 1000px;
-  border: 1px solid lightgray;
+  border: 1px solid #a59a8e;
   background-color: white;
   box-shadow: lightgray 10px 10px 10px;
 }
@@ -55,7 +55,8 @@ body {
   height: 60px;
 }
 
-.edit-button{
+.edit-button,
+.img-button{
   width: 140px;
   height: 30px;
   align-self: center;
@@ -65,6 +66,7 @@ body {
   background-color: #33302d;
   color: #c4c2c0;
   font-weight: bolder;
+  cursor: pointer;
 }
 
 .section-title{
@@ -75,6 +77,12 @@ body {
 .card-container{
   display: flex;
   justify-content: space-between;
+  margin: 30px 0;
+}
+
+.button-container{
+  display: flex;
+  align-items: center;
 }
 
 /* HEADER */
@@ -124,7 +132,6 @@ body {
 
 .info-container{
   width: 400px;
-  font-size: 17px;
 }
 
 .info-title{
@@ -136,11 +143,6 @@ body {
 
 .info-container hr{
   border: 2px dashed #7c746b;
-}
-
-.info-container label{
-  font-weight: 500;
-  color: #33302d;
 }
 
 .info-container .img-input{
@@ -157,6 +159,7 @@ body {
   display: flex;
   gap: 10px;
   padding: 1px;
+  font-size: 17px;
 }
 
 .entry label{
