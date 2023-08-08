@@ -19,7 +19,7 @@ export default function WorkExperience() {
                 <h1 className='principal-title' id='work'>Work Experience</h1>
             </div>
             <div className='work-container'>
-                <div id="work-cards">
+                <div className="work-cards">
                     {work.map(item =>
                         <WorkCard key={item.id} values={item} />
                     )}
@@ -37,13 +37,11 @@ function WorkCard({ values }) {
     if (!isEditing) {
         workList = 
             <div key={works.id}>
-                <div className="work-container">
+                <div className="work-card">
                     <div className='info-container'>
-                        <b>Title: </b> {works.title}
-                        <br/>
-                        <b>Institution: </b> {works.institution}
-                        <br/>
-                        <b>Description: </b>
+                            <div class="entry"><label>Title: </label> {works.title}</div>
+                            <div class="entry"><label>Institution: </label> {works.institution}</div>
+                            <div class="entry"><label>Description: </label></div>
                         <ul>
                             {works.description.map((description) => (
                                 <li key={description.id}>
@@ -52,7 +50,7 @@ function WorkCard({ values }) {
                             ))}
                         </ul>
                     </div>
-                    <button onClick={handleEditing}>
+                    <button className='edit-button' onClick={handleEditing}>
                     {isEditing
                     ? 'Save Information'
                     : 'Edit Information'
@@ -64,24 +62,28 @@ function WorkCard({ values }) {
     } else {
         workList = 
             <div key={works.id}>
-                <div className="work-container">
+                <div className="work-card">
                     <div className='form-container'>
-                        <label>Title: </label>
-                        <input name='title' value={works.title} onChange={handleInfo}></input>
-                        <br/>
-                        <label>Institution: </label>
-                        <input name='institution' value={works.institution} onChange={handleInfo}></input>
-                        <br/>
-                        <label>Description: </label>
-                        <ul>
-                            {works.description.map(description => 
-                                <li key={description.id}>
-                                    <input name={description.id} value={description.desc} onChange={(e) => handleDescription(e, description.id)}></input>
-                                </li>
-                            )}
-                        </ul>
+                        <div class="entry">
+                            <label>Title: </label>
+                            <input name='title' value={works.title} onChange={handleInfo}></input>
+                        </div>
+                        <div class="entry">
+                            <label>Institution: </label>
+                            <input name='institution' value={works.institution} onChange={handleInfo}></input>
+                        </div>
+                        <div class="entry">
+                            <label>Description: </label>
+                            <ul>
+                                {works.description.map(description =>
+                                    <li key={description.id}>
+                                        <input name={description.id} value={description.desc} onChange={(e) => handleDescription(e, description.id)}></input>
+                                    </li>
+                                )}
+                            </ul>
+                        </div>
                     </div>
-                    <button onClick={handleEditing}>
+                    <button className='edit-button' onClick={handleEditing}>
                     {isEditing
                     ? 'Save Information'
                     : 'Edit Information'
