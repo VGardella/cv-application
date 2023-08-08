@@ -56,7 +56,8 @@ body {
 }
 
 .edit-button,
-.img-button{
+.img-button,
+.link-button{
   width: 140px;
   height: 30px;
   align-self: center;
@@ -171,4 +172,65 @@ body {
 
 .edu-container{
   margin-bottom: 20px;
+}
+
+/* PROJECTS */
+
+.project-cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 500px;
+  gap: 20px;
+}
+
+.project-card{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #c4c2c0;
+  box-shadow: 5px 5px 5px #e7e5e2;
+  justify-content: space-between;
+}
+
+.img-proj-container{
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.img-proj-container .img{
+  padding: 20px;
+  align-self: center;
+}
+
+.proj-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.img-container{
+  align-self: center;
+  width: auto;
+}
+
+.project-card .info-container,
+.project-card .form-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card .info-container .entry{
+  padding: 0 25px; 
+}
+
+.info-container .entry p{
+  margin: 0;
+  word-break: normal;
+  white-space: normal;
+}
+
+.buttons{
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
