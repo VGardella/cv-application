@@ -110,27 +110,29 @@ function ProjectCard({ values }) {
         projectList =  
             <div className='project-card' key={projects.id}>
                 <div className='img-proj-container'>
-                    <a href={projects.img} target="_blank" rel="noreferrer">
-                        <img
-                            src={projects.img}
-                            alt={projects.title}
-                            style={{ height: 200 }}
-                        />
-                    </a>
-                </div>
-                <div className="proj-container">
+                    <div className="img">
+                        <a href={projects.img} target="_blank" rel="noreferrer">
+                            <img
+                                src={projects.img}
+                                alt={projects.title}
+                                style={{ height: 175 }}
+                            />
+                        </a>
+                    </div>
                     <div className='info-container'>
-                        <div className="entry"><label>Title: </label> {projects.title}</div>
-                        <div className="entry"><label>Description: </label> {projects.description}</div>
+                        <div className="entry"><label>Title: </label> <p>{projects.title}</p></div>
+                        <div className="entry"><label>Description: </label> <p>{projects.description}</p></div>
                         <div className="entry"><label>Languages: </label> {projects.languages}</div>
                     </div>
+                </div>
+                <div className="proj-container">
                     <div className='buttons'>
                         <div className="links-container">
                             <a href={projects.repository} target="_blank" rel="noreferrer">
-                                <button>Go to Repository!</button>
+                                <button className='link-button'>Go to Repository!</button>
                             </a>
                             <a href={projects.livepreview} target="_blank" rel="noreferrer">
-                                <button>Go to Live Preview!</button>
+                                <button className='link-button'>Go to Live Preview!</button>
                             </a>
                         </div>
                         <button className='edit-button' onClick={handleEditing}>
@@ -146,9 +148,15 @@ function ProjectCard({ values }) {
         projectList =  
             <div className='project-card' key={projects.id}>
                 <div className='img-proj-container'>
-                    <p>Filler text</p>
-                </div>
-                <div className="proj-container">
+                    <div className="img">
+                        <a href={projects.img} target="_blank" rel="noreferrer">
+                            <img
+                                src={projects.img}
+                                alt={projects.title}
+                                style={{ height: 175 }}
+                            />
+                        </a>
+                    </div>
                     <div className='form-container'>
                         <form className='cv-form'>
                             <div className="entry">
@@ -165,6 +173,8 @@ function ProjectCard({ values }) {
                             </div>
                         </form>
                     </div>
+                </div>
+                <div className="proj-container">
                     <div className="buttons">
                         <div className="links-container">
                             <div className="entry">
