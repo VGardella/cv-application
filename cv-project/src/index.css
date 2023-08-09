@@ -133,6 +133,14 @@ html{
   border-bottom: 2px solid white;
 }
 
+.nav-bar a:hover{
+  border-bottom: 2px solid #7c746b;
+}
+
+.nav-bar a:active{
+  border-bottom: 2px solid #33302d;  
+}
+
 /* PERSONAL INFORMATION */
 
 #general-information{
