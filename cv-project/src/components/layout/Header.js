@@ -9,7 +9,7 @@ export default function Header() {
                     <h1 className='my-name'>Victoria Gardella Ruiz</h1>
                 </div>
                 <div className='nav-bar'>
-                    <a href='#personal' alt='Persoanl' id='personal-link'>About Me</a>
+                    <a href='#top-anchor' alt='Personal' id='personal-link'>About Me</a>
                     <a href='#edu' alt='Education' id='edu-link'>Education</a>
                     <a href='#proj' alt='Projects' id='projects-link'>Projects</a>
                     <a href='#work' alt='Work Experience' id='work-link'>Work Experience</a>
