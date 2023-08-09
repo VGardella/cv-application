@@ -30,6 +30,10 @@ body {
   box-shadow: lightgray 10px 10px 10px;
 }
 
+.body #top-anchor{
+  scroll-margin-top: 250px;
+}
+
 /* GENERAL */
 
 .principal-container{
@@ -48,6 +52,7 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
+  scroll-margin-top: 150px;
 }
 
 .principal-title img{
@@ -140,6 +145,7 @@ body {
   font-size: 25px;
   margin: 12px 0;
   text-transform: uppercase;
+  scroll-margin-top: 0;
 }
 
 .info-container hr{
