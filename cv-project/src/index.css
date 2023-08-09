@@ -10,6 +10,10 @@ body {
   background-color: #eaf4ec;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 /* LAYOUT */
 
 .header{
@@ -17,7 +21,7 @@ body {
   flex-direction: column;
   padding: 20px 30px 20px 30px;
   background-color: #33302d;
-  color: #a59a8e;
+  color: #e7e5e2;
   position: sticky;
   top: 0;
 }
