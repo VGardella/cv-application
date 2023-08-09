@@ -77,7 +77,7 @@ export function Courses() {
         <div className='edu-container' id='courses-container'>
             <h2 className='section-title'>Courses:</h2>
             <hr />
-            <div id="courses-cards">
+            <div className="courses-cards">
                 {courses.map(item =>
                     <CoursesCard key={item.id} values={item} />
                 )}

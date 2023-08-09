@@ -39,16 +39,17 @@ function WorkCard({ values }) {
             <div key={works.id}>
                 <div className="work-card">
                     <div className='info-container'>
-                            <div class="entry"><label>Title: </label> {works.title}</div>
-                            <div class="entry"><label>Institution: </label> {works.institution}</div>
-                            <div class="entry"><label>Description: </label></div>
-                        <ul>
-                            {works.description.map((description) => (
-                                <li key={description.id}>
-                                    {description.desc}
-                                </li>
-                            ))}
-                        </ul>
+                            <div className="entry"><label>Title: </label> {works.title}</div>
+                            <div className="entry"><label>Institution: </label> {works.institution}</div>
+                            <div className="entry description-list"><label>Description: </label>
+                                <ul>
+                                    {works.description.map((description) => (
+                                        <li key={description.id}>
+                                            {description.desc}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                     </div>
                     <button className='edit-button' onClick={handleEditing}>
                     {isEditing
@@ -64,15 +65,15 @@ function WorkCard({ values }) {
             <div key={works.id}>
                 <div className="work-card">
                     <div className='form-container'>
-                        <div class="entry">
+                        <div className="entry">
                             <label>Title: </label>
                             <input name='title' value={works.title} onChange={handleInfo}></input>
                         </div>
-                        <div class="entry">
+                        <div className="entry">
                             <label>Institution: </label>
                             <input name='institution' value={works.institution} onChange={handleInfo}></input>
                         </div>
-                        <div class="entry">
+                        <div className="entry description-list">
                             <label>Description: </label>
                             <ul>
                                 {works.description.map(description =>

@@ -19,7 +19,7 @@ export function Certifications() {
         <div className='edu-container' id='certification-container'>
             <h2 className='section-title'>Certifications</h2>
             <hr />
-            <div id="certification-cards">
+            <div className="certification-cards">
                 {certif.map(item =>
                     <CertifCard key={item.id} values={item} />
                 )}
