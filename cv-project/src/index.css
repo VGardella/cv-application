@@ -131,7 +131,7 @@ body {
   margin: 70px 0 0 0;
 }
 
-.info-container{
+.principal-container .info-container{
   width: 400px;
 }
 
@@ -195,6 +195,7 @@ body {
   align-self: center;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .img-proj-container .img{
@@ -218,7 +219,8 @@ body {
   flex-direction: column;
 }
 
-.project-card .info-container .entry{
+.project-card .info-container .entry,
+.form-container .cv-form .entry{
   padding: 0 25px; 
 }
 
@@ -233,4 +235,21 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* WORK */
+
+.work-card{
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.description-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.description-list ul{
+  margin: 0;
 }
