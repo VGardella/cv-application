@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/cv-application/static/css/main.bf943eaa.css",
+    "main.js": "/cv-application/static/js/main.a993fff7.js",
+    "static/js/787.34a20539.chunk.js": "/cv-application/static/js/787.34a20539.chunk.js",
+    "static/media/Nabila-2Oxe8.otf": "/cv-application/static/media/Nabila-2Oxe8.4352abbfd2837196337a.otf",
+    "index.html": "/cv-application/index.html",
+    "main.bf943eaa.css.map": "/cv-application/static/css/main.bf943eaa.css.map",
+    "main.a993fff7.js.map": "/cv-application/static/js/main.a993fff7.js.map",
+    "787.34a20539.chunk.js.map": "/cv-application/static/js/787.34a20539.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf943eaa.css",
+    "static/js/main.a993fff7.js"
+  ]
+}
