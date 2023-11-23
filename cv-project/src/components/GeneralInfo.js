@@ -9,50 +9,50 @@ export default function PersonalInfo() {
         img: 'https://i.imgur.com/CjepkMr.png'
     }
 
-    const [ isEditing, setEditing ] = useState(false);
+    // const [ isEditing, setEditing ] = useState(false);
     const [ personalInfo, setPersonalInfo ] = useState(info);
     
     let infoStructure;
 
-    if (isEditing) {
-        infoStructure = (
-            <div className="principal-container">
-                <div className='avatar-container'>
-                    <form className='form-container'>
-                        <a href={personalInfo.img} target="_blank" rel="noreferrer">
-                            <img src={personalInfo.img} alt='Profile' style={{ width: 200 }}/>
-                        </a>
-                    </form>
-                </div>
-                <form className='info-container'>
-                    <h3 className='info-title' id='personal'>About myself:</h3>
-                    <hr/>
-                    <div className="data-input">
-                        <div className="entry">
-                            <label>Name: </label>
-                            <input name='name' value={personalInfo.name} onChange={handleInfo}></input>
-                        </div>
-                        <div className="entry">
-                            <label>Mail: </label>
-                            <input name='mail' value={personalInfo.mail} onChange={handleInfo}></input>
-                        </div>
-                        <div className="entry">
-                            <label>Phone: </label>
-                            <input name='phone' value={personalInfo.phone} onChange={handleInfo}></input>
-                        </div>
-                        <div className="entry">
-                            <label>Location: </label>
-                            <input name='location' value={personalInfo.location} onChange={handleInfo}></input>
-                        </div>
-                    </div>
-                    <div className='img-input'>
-                        <label>New profile picture: </label>
-                        <input name='img' value={personalInfo.img} onChange={handleInfo}></input>
-                    </div>
-                </form>
-            </div>
-        )
-    } else {
+    // if (isEditing) {
+    //     infoStructure = (
+    //         <div className="principal-container">
+    //             <div className='avatar-container'>
+    //                 <form className='form-container'>
+    //                     <a href={personalInfo.img} target="_blank" rel="noreferrer">
+    //                         <img src={personalInfo.img} alt='Profile' style={{ width: 200 }}/>
+    //                     </a>
+    //                 </form>
+    //             </div>
+    //             <form className='info-container'>
+    //                 <h3 className='info-title' id='personal'>About myself:</h3>
+    //                 <hr/>
+    //                 <div className="data-input">
+    //                     <div className="entry">
+    //                         <label>Name: </label>
+    //                         <input name='name' value={personalInfo.name} onChange={handleInfo}></input>
+    //                     </div>
+    //                     <div className="entry">
+    //                         <label>Mail: </label>
+    //                         <input name='mail' value={personalInfo.mail} onChange={handleInfo}></input>
+    //                     </div>
+    //                     <div className="entry">
+    //                         <label>Phone: </label>
+    //                         <input name='phone' value={personalInfo.phone} onChange={handleInfo}></input>
+    //                     </div>
+    //                     <div className="entry">
+    //                         <label>Location: </label>
+    //                         <input name='location' value={personalInfo.location} onChange={handleInfo}></input>
+    //                     </div>
+    //                 </div>
+    //                 <div className='img-input'>
+    //                     <label>New profile picture: </label>
+    //                     <input name='img' value={personalInfo.img} onChange={handleInfo}></input>
+    //                 </div>
+    //             </form>
+    //         </div>
+    //     )
+    // } else {
         infoStructure = (
             <div className="principal-container">
                 <div className='avatar-container'>
@@ -75,28 +75,28 @@ export default function PersonalInfo() {
             
 
         )
-    }
+    // }
 
-    function handleEdit() {
-        setEditing(!isEditing);
-    }
+    // function handleEdit() {
+    //     setEditing(!isEditing);
+    // }
 
-    function handleInfo(e) {
-        setPersonalInfo({
-            ...personalInfo,
-            [e.target.name]: e.target.value,
-        });
-    };
+    // function handleInfo(e) {
+    //     setPersonalInfo({
+    //         ...personalInfo,
+    //         [e.target.name]: e.target.value,
+    //     });
+    // };
 
     return (
         <div className='principal' id='general-information'>
             { infoStructure }
-            <button className='edit-button' onClick={handleEdit}>
+            {/* <button className='edit-button' onClick={handleEdit}>
             {isEditing
             ? 'Save Information'
             : 'Edit Information'
             }
-            </button>
+            </button> */}
         </div>
     );
 }

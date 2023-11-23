@@ -102,11 +102,11 @@ export default function PersonalProjects() {
 };
 
 function ProjectCard({ values }) {
-    const [ isEditing, setEiditing ] = useState(false);
+    // const [ isEditing, setEiditing ] = useState(false);
     const [ projects, setProjects ] = useState(values);
     let projectList = null;
 
-    if (!isEditing) {
+    // if (!isEditing) {
         projectList =  
             <div className='project-card' key={projects.id}>
                 <div className='img-proj-container'>
@@ -135,83 +135,83 @@ function ProjectCard({ values }) {
                                 <button className='link-button'>Go to Live Preview!</button>
                             </a>
                         </div>
-                        <button className='edit-button' onClick={handleEditing}>
+                        {/* <button className='edit-button' onClick={handleEditing}>
                         {isEditing
                         ? 'Save Information'
                         : 'Edit Information'
                         }
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>
-    } else {
-        projectList =  
-            <div className='project-card' key={projects.id}>
-                <div className='img-proj-container'>
-                    <div className="img">
-                        <a href={projects.img} target="_blank" rel="noreferrer">
-                            <img
-                                src={projects.img}
-                                alt={projects.title}
-                                style={{ height: 175 }}
-                            />
-                        </a>
-                    </div>
-                    <div className='form-container'>
-                        <form className='cv-form'>
-                            <div className="entry">
-                                <label>Title: </label>
-                                <input name='title' value={projects.title} onChange={handleInfo}></input>
-                            </div>
-                            <div className="entry">
-                                <label>Description: </label>
-                                <input name='description' value={projects.description} onChange={handleInfo}></input>
-                            </div>
-                            <div className="entry">
-                                <label>Languages: </label>
-                                <input name='languages' value={projects.languages} onChange={handleInfo}></input>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div className="proj-container">
-                    <div className="buttons">
-                        <div className="links-container">
-                            <div className="entry">
-                                <a href={projects.repository} target="_blank" rel="noreferrer">
-                                    <label>Repository:</label>
-                                    <input name='repository' value={projects.repository} onChange={handleInfo}></input>
-                                </a>
-                            </div>
-                            <div className="entry">
-                                <a href={projects.livepreview} target="_blank" rel="noreferrer">
-                                    <label>Live Preview:</label>
-                                    <input name='livepreview' value={projects.livepreview} onChange={handleInfo}></input>
-                                </a>
-                            </div>
-                        </div>
-                        <button className='edit-button' onClick={handleEditing}>
-                        {isEditing
-                        ? 'Save Information'
-                        : 'Edit Information'
-                        }
-                        </button>
-                    </div>
-                </div>
-                <br/>
-            </div>
-    }
+    // } else {
+    //     projectList =  
+    //         <div className='project-card' key={projects.id}>
+    //             <div className='img-proj-container'>
+    //                 <div className="img">
+    //                     <a href={projects.img} target="_blank" rel="noreferrer">
+    //                         <img
+    //                             src={projects.img}
+    //                             alt={projects.title}
+    //                             style={{ height: 175 }}
+    //                         />
+    //                     </a>
+    //                 </div>
+    //                 <div className='form-container'>
+    //                     <form className='cv-form'>
+    //                         <div className="entry">
+    //                             <label>Title: </label>
+    //                             <input name='title' value={projects.title} onChange={handleInfo}></input>
+    //                         </div>
+    //                         <div className="entry">
+    //                             <label>Description: </label>
+    //                             <input name='description' value={projects.description} onChange={handleInfo}></input>
+    //                         </div>
+    //                         <div className="entry">
+    //                             <label>Languages: </label>
+    //                             <input name='languages' value={projects.languages} onChange={handleInfo}></input>
+    //                         </div>
+    //                     </form>
+    //                 </div>
+    //             </div>
+    //             <div className="proj-container">
+    //                 <div className="buttons">
+    //                     <div className="links-container">
+    //                         <div className="entry">
+    //                             <a href={projects.repository} target="_blank" rel="noreferrer">
+    //                                 <label>Repository:</label>
+    //                                 <input name='repository' value={projects.repository} onChange={handleInfo}></input>
+    //                             </a>
+    //                         </div>
+    //                         <div className="entry">
+    //                             <a href={projects.livepreview} target="_blank" rel="noreferrer">
+    //                                 <label>Live Preview:</label>
+    //                                 <input name='livepreview' value={projects.livepreview} onChange={handleInfo}></input>
+    //                             </a>
+    //                         </div>
+    //                     </div>
+    //                     <button className='edit-button' onClick={handleEditing}>
+    //                     {isEditing
+    //                     ? 'Save Information'
+    //                     : 'Edit Information'
+    //                     }
+    //                     </button>
+    //                 </div>
+    //             </div>
+    //             <br/>
+    //         </div>
+    // }
 
-    function handleInfo(e) {
-        setProjects({
-            ...projects,
-            [e.target.name]: e.target.value,
-        })
-    };
+    // function handleInfo(e) {
+    //     setProjects({
+    //         ...projects,
+    //         [e.target.name]: e.target.value,
+    //     })
+    // };
 
-    function handleEditing() {
-        setEiditing(!isEditing);
-    };
+    // function handleEditing() {
+    //     setEiditing(!isEditing);
+    // };
 
     return projectList
 };

@@ -35,34 +35,34 @@ export function Degrees() {
 }
 
 function BachelorCard({ values }) {
-    const [ isEditingBach, setEditingBach ] = useState(false);
+    // const [ isEditingBach, setEditingBach ] = useState(false);
     const [ bach, setBach ] = useState(values);
     let bachStructure = null;
 
-    if (isEditingBach) {
-        bachStructure = (
-            <form className='cv-form'>
-                <div className="entry">
-                    <label>Career: </label>
-                    <input name='career' value={bach.career} onChange={handleInfo}></input>
-                </div>
-                <div className="entry">
-                    <label>Institution: </label>
-                    <input name='school' value={bach.school} onChange={handleInfo}></input>
-                    ,
-                    <input name='university' value={bach.university} onChange={handleInfo}></input>
-                </div>
-                <div className="entry">
-                    <label>Status: </label>
-                    <input name='status' value={bach.status} onChange={handleInfo}></input>
-                </div>
-                <div className="entry">
-                    <label>Duration: </label>
-                    <input name='duration' value={bach.duration} onChange={handleInfo}></input>
-                </div>
-            </form>
-        );
-    } else {
+    // if (isEditingBach) {
+    //     bachStructure = (
+    //         <form className='cv-form'>
+    //             <div className="entry">
+    //                 <label>Career: </label>
+    //                 <input name='career' value={bach.career} onChange={handleInfo}></input>
+    //             </div>
+    //             <div className="entry">
+    //                 <label>Institution: </label>
+    //                 <input name='school' value={bach.school} onChange={handleInfo}></input>
+    //                 ,
+    //                 <input name='university' value={bach.university} onChange={handleInfo}></input>
+    //             </div>
+    //             <div className="entry">
+    //                 <label>Status: </label>
+    //                 <input name='status' value={bach.status} onChange={handleInfo}></input>
+    //             </div>
+    //             <div className="entry">
+    //                 <label>Duration: </label>
+    //                 <input name='duration' value={bach.duration} onChange={handleInfo}></input>
+    //             </div>
+    //         </form>
+    //     );
+    // } else {
         bachStructure = (
             <div>
                 <div className="entry"><label>Career: </label> {bach.career}</div>
@@ -70,62 +70,63 @@ function BachelorCard({ values }) {
                 <div className="entry"><label>Status: </label> {bach.status}</div>
                 <div className="entry"><label>Duration: </label> {bach.duration}</div>
             </div>
-    )};
+    )
+// };
 
-    function handleInfo(e) {
-        setBach({
-            ...bach,
-            [e.target.name]: e.target.value,
-        });
-    };
+    // function handleInfo(e) {
+    //     setBach({
+    //         ...bach,
+    //         [e.target.name]: e.target.value,
+    //     });
+    // };
 
     return (
         <div className='card-container'>
             { bachStructure }
-            <button className='edit-button' onClick={() => {setEditingBach(!isEditingBach)}}>
+            {/* <button className='edit-button' onClick={() => {setEditingBach(!isEditingBach)}}>
             {isEditingBach
             ? 'Save Information'
             : 'Edit Information'
             }
-            </button>
+            </button> */}
         </div>
     );
 }
 
 
 function PhdCard({ values }) {
-    const [ isEditingPhd, setEditingPhd ] = useState(false);
+    // const [ isEditingPhd, setEditingPhd ] = useState(false);
     const [ phd, setPhd ] = useState(values);
     let phdStructure = null;
 
-    if (isEditingPhd) {
-        phdStructure = (
-            <form className='cv-form'>
-                <div className="entry">
-                    <label>Career: </label>
-                    <input name='career' value={phd.career} onChange={handleInfo}></input>
-                </div>
-                <div className="entry">
-                    <label>Institution: </label>
-                    <input name='institution' value={phd.institution} onChange={handleInfo}></input>
-                     -
-                    <input name='university' value={phd.university} onChange={handleInfo}></input>
-                </div>
-                <div className="entry">
-                    <label>Theme: </label>
-                    <input name='theme' value={phd.theme} onChange={handleInfo}></input>
-                </div>
-                <div className="entry">
-                    <label>Status: </label>
-                    <input name='status' value={phd.status} onChange={handleInfo}></input>
-                </div>
-                <div className="entry">
-                    <label>Duration: </label>
-                    <input name='duration' value={phd.duration} onChange={handleInfo}></input>
-                </div>
-            </form>
-        );
-    } else {
+    // if (isEditingPhd) {
+    //     phdStructure = (
+    //         <form className='cv-form'>
+    //             <div className="entry">
+    //                 <label>Career: </label>
+    //                 <input name='career' value={phd.career} onChange={handleInfo}></input>
+    //             </div>
+    //             <div className="entry">
+    //                 <label>Institution: </label>
+    //                 <input name='institution' value={phd.institution} onChange={handleInfo}></input>
+    //                  -
+    //                 <input name='university' value={phd.university} onChange={handleInfo}></input>
+    //             </div>
+    //             <div className="entry">
+    //                 <label>Theme: </label>
+    //                 <input name='theme' value={phd.theme} onChange={handleInfo}></input>
+    //             </div>
+    //             <div className="entry">
+    //                 <label>Status: </label>
+    //                 <input name='status' value={phd.status} onChange={handleInfo}></input>
+    //             </div>
+    //             <div className="entry">
+    //                 <label>Duration: </label>
+    //                 <input name='duration' value={phd.duration} onChange={handleInfo}></input>
+    //             </div>
+    //         </form>
+    //     );
+    // } else {
         phdStructure = (
             <div>
                 <div className="entry"><label>Career: </label> {phd.career}</div>
@@ -134,25 +135,26 @@ function PhdCard({ values }) {
                 <div className="entry"><label>Status: </label> {phd.status}</div>
                 <div className="entry"><label>Duration: </label> {phd.duration}</div>
             </div>
-    )};
+    )
+// };
 
 
-    function handleInfo(e) {
-        setPhd({
-            ...phd,
-            [e.target.name]: e.target.value,
-        })
-    };
+    // function handleInfo(e) {
+    //     setPhd({
+    //         ...phd,
+    //         [e.target.name]: e.target.value,
+    //     })
+    // };
 
     return (
         <div className='card-container'>
             { phdStructure }
-            <button className='edit-button' onClick={() => {setEditingPhd(!isEditingPhd)}}>
+            {/* <button className='edit-button' onClick={() => {setEditingPhd(!isEditingPhd)}}>
             {isEditingPhd
             ? 'Save Information'
             : 'Edit Information'
             }
-            </button>
+            </button> */}
         </div>
     );
 

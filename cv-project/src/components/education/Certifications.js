@@ -29,11 +29,11 @@ export function Certifications() {
 };
 
 function CertifCard({ values }) {
-    const [ isEditing, setEditing ] = useState(false);
+    // const [ isEditing, setEditing ] = useState(false);
     const [ certifications, setCertifications ] = useState(values);
     let certList = null;
 
-    if (!isEditing) {
+    // if (!isEditing) {
         certList = 
             <div>
                 <div className="card-container">
@@ -55,73 +55,73 @@ function CertifCard({ values }) {
                         <a href={certifications.img} target="_blank" rel="noreferrer">
                             <button className='img-button'>Go to Certificate</button>
                         </a>
-                        <button className='edit-button' onClick={() => setEditing(!isEditing)}>
+                        {/* <button className='edit-button' onClick={() => setEditing(!isEditing)}>
                         {isEditing
                         ? 'Save Information'
                         : 'Edit Information'
                         }
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>;
-    } else {
-        certList = 
-            <div>
-                <div className="card-container">
-                    <div className='form-container'>
-                        <form className='cv-form'>
-                            <div className="entry">
-                                <label>Title: </label>
-                                <input name='title' value={certifications.title} onChange={handleInfo}></input>
-                            </div>
-                            <div className="entry">
-                                <label>Institution: </label>
-                                <input name='institution' value={certifications.institution} onChange={handleInfo}></input>
-                            </div>
-                            <div className="entry">
-                                <label>Date: </label>
-                                <input name='date' value={certifications.date} onChange={handleInfo}></input>
-                            </div>
-                        </form>
-                    </div>
-                    {/* <div className="img-container">
-                        <form className='form-container'>
-                            <a href={certifications.img} target="_blank" rel="noreferrer">
-                                <img
-                                    src={certifications.img}
-                                    alt={certifications.title}
-                                    style={{ width: 200 }}
-                                />
-                            </a>
-                            <label>New image:</label>
-                            <input name='img' value={certifications.img} onChange={handleInfo}></input>
-                        </form>
-                    </div> */}
-                    <div className="button-container">
-                        <a href={certifications.img} target="_blank" rel="noreferrer">
-                            <button className='img-button'>Go to Certificate</button>
-                        </a>
-                        <button className='edit-button' onClick={() => setEditing(!isEditing)}>
-                        {isEditing
-                        ? 'Save Information'
-                        : 'Edit Information'
-                        }
-                        </button>
-                    </div>
-                </div>
-            </div>
-    }
+    // } else {
+    //     certList = 
+    //         <div>
+    //             <div className="card-container">
+    //                 <div className='form-container'>
+    //                     <form className='cv-form'>
+    //                         <div className="entry">
+    //                             <label>Title: </label>
+    //                             <input name='title' value={certifications.title} onChange={handleInfo}></input>
+    //                         </div>
+    //                         <div className="entry">
+    //                             <label>Institution: </label>
+    //                             <input name='institution' value={certifications.institution} onChange={handleInfo}></input>
+    //                         </div>
+    //                         <div className="entry">
+    //                             <label>Date: </label>
+    //                             <input name='date' value={certifications.date} onChange={handleInfo}></input>
+    //                         </div>
+    //                     </form>
+    //                 </div>
+    //                 {/* <div className="img-container">
+    //                     <form className='form-container'>
+    //                         <a href={certifications.img} target="_blank" rel="noreferrer">
+    //                             <img
+    //                                 src={certifications.img}
+    //                                 alt={certifications.title}
+    //                                 style={{ width: 200 }}
+    //                             />
+    //                         </a>
+    //                         <label>New image:</label>
+    //                         <input name='img' value={certifications.img} onChange={handleInfo}></input>
+    //                     </form>
+    //                 </div> */}
+    //                 <div className="button-container">
+    //                     <a href={certifications.img} target="_blank" rel="noreferrer">
+    //                         <button className='img-button'>Go to Certificate</button>
+    //                     </a>
+    //                     <button className='edit-button' onClick={() => setEditing(!isEditing)}>
+    //                     {isEditing
+    //                     ? 'Save Information'
+    //                     : 'Edit Information'
+    //                     }
+    //                     </button>
+    //                 </div>
+    //             </div>
+    //         </div>
+    // }
 
-    function handleInfo(e) {
-        setCertifications({
-            ...certifications,
-            [e.target.name]: e.target.value
-        });
-    };
+    // function handleInfo(e) {
+    //     setCertifications({
+    //         ...certifications,
+    //         [e.target.name]: e.target.value
+    //     });
+    // };
 
-    function handelEditing() {
-        setEditing(!isEditing);
-    }
+    // function handelEditing() {
+    //     setEditing(!isEditing);
+    // }
 
     return certList;
 }

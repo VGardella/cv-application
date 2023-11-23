@@ -30,11 +30,11 @@ export default function WorkExperience() {
 };
 
 function WorkCard({ values }) {
-    const [ isEditing, setEditing ] = useState(false);
+    // const [ isEditing, setEditing ] = useState(false);
     const [ works, setWorks ] = useState(values);
     let workList = null;
 
-    if (!isEditing) {
+    // if (!isEditing) {
         workList = 
             <div key={works.id}>
                 <div className="work-card">
@@ -51,75 +51,75 @@ function WorkCard({ values }) {
                                 </ul>
                             </div>
                     </div>
-                    <button className='edit-button' onClick={handleEditing}>
+                    {/* <button className='edit-button' onClick={handleEditing}>
                     {isEditing
                     ? 'Save Information'
                     : 'Edit Information'
                     }
-                    </button>
+                    </button> */}
                 </div>
                 <br/>
             </div>
-    } else {
-        workList = 
-            <div key={works.id}>
-                <div className="work-card">
-                    <div className='form-container'>
-                        <div className="entry">
-                            <label>Title: </label>
-                            <input name='title' value={works.title} onChange={handleInfo}></input>
-                        </div>
-                        <div className="entry">
-                            <label>Institution: </label>
-                            <input name='institution' value={works.institution} onChange={handleInfo}></input>
-                        </div>
-                        <div className="entry description-list">
-                            <label>Description: </label>
-                            <ul>
-                                {works.description.map(description =>
-                                    <li key={description.id}>
-                                        <input name={description.id} value={description.desc} onChange={(e) => handleDescription(e, description.id)}></input>
-                                    </li>
-                                )}
-                            </ul>
-                        </div>
-                    </div>
-                    <button className='edit-button' onClick={handleEditing}>
-                    {isEditing
-                    ? 'Save Information'
-                    : 'Edit Information'
-                    }
-                    </button>
-                </div>
-                <br/>
-            </div>
-    }
+    // } else {
+    //     workList = 
+    //         <div key={works.id}>
+    //             <div className="work-card">
+    //                 <div className='form-container'>
+    //                     <div className="entry">
+    //                         <label>Title: </label>
+    //                         <input name='title' value={works.title} onChange={handleInfo}></input>
+    //                     </div>
+    //                     <div className="entry">
+    //                         <label>Institution: </label>
+    //                         <input name='institution' value={works.institution} onChange={handleInfo}></input>
+    //                     </div>
+    //                     <div className="entry description-list">
+    //                         <label>Description: </label>
+    //                         <ul>
+    //                             {works.description.map(description =>
+    //                                 <li key={description.id}>
+    //                                     <input name={description.id} value={description.desc} onChange={(e) => handleDescription(e, description.id)}></input>
+    //                                 </li>
+    //                             )}
+    //                         </ul>
+    //                     </div>
+    //                 </div>
+    //                 <button className='edit-button' onClick={handleEditing}>
+    //                 {isEditing
+    //                 ? 'Save Information'
+    //                 : 'Edit Information'
+    //                 }
+    //                 </button>
+    //             </div>
+    //             <br/>
+    //         </div>
+    // }
 
-    function handleEditing() {
-        setEditing(!isEditing);
-    }
+    // function handleEditing() {
+    //     setEditing(!isEditing);
+    // }
 
-    function handleInfo(e) {
-        setWorks({
-            ...works,
-            [e.target.name]: e.target.value,
-        })
-    }
+    // function handleInfo(e) {
+    //     setWorks({
+    //         ...works,
+    //         [e.target.name]: e.target.value,
+    //     })
+    // }
 
-    function handleDescription(e, itemId) {
-        const tempArray = [...works.description];
-        let index = tempArray.findIndex(item => item.id === itemId);
+    // function handleDescription(e, itemId) {
+    //     const tempArray = [...works.description];
+    //     let index = tempArray.findIndex(item => item.id === itemId);
         
-        tempArray[index] = {
-            id: tempArray[index].id,
-            desc: e.target.value,
-        }
+    //     tempArray[index] = {
+    //         id: tempArray[index].id,
+    //         desc: e.target.value,
+    //     }
 
-        setWorks({
-            ...works,
-            description: tempArray
-        })
-    }
+    //     setWorks({
+    //         ...works,
+    //         description: tempArray
+    //     })
+    // }
 
     return workList;
 }

@@ -87,11 +87,11 @@ export function Courses() {
 }
 
 function CoursesCard({ values }) {
-    const [ isEditing, setEditing ] = useState(false);
+    // const [ isEditing, setEditing ] = useState(false);
     const [ courses, setCourses ] = useState(values);
     let coursesList = null;
 
-    if (!isEditing) {
+    // if (!isEditing) {
         coursesList = 
             <div key={courses.id}>
                 <div className="card-container">
@@ -120,75 +120,75 @@ function CoursesCard({ values }) {
                         <a href={courses.img} target="_blank" rel="noreferrer">
                             <button className='img-button'>Go to Course</button>
                         </a>
-                        <button className='edit-button' onClick={() => setEditing(!isEditing)}>
+                        {/* <button className='edit-button' onClick={() => setEditing(!isEditing)}>
                         {isEditing
                         ? 'Save Information'
                         : 'Edit Information'
                         }
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>
-    } else {
-        coursesList = 
-        <div key={courses.id}>
-            <div className="card-container">
-                <div className='form-container'>
-                    <form className='cv-form'>
-                        <div className="entry">
-                            <label>Title: </label>
-                            <input name='title' value={courses.title} onChange={handleInfo}></input>
-                        </div>
-                        <div className="entry">
-                            <label>Institution: </label>
-                            <input name='institution' value={courses.institution} onChange={handleInfo}></input>
-                        </div>
-                        <div className="entry">
-                            <label>Date: </label>
-                            <input name='date' value={courses.date} onChange={handleInfo}></input>
-                        </div>
-                    </form>
-                </div>
-                {/* <div className="img-container">
-                    <form className='form-container'>
-                        <img
-                            src={courses.mini}
-                            alt={courses.title}
-                            style={{ width: 200 }}
-                        />
-                        <label>New image:</label>
-                        <input name='mini' value={courses.mini} onChange={handleInfo}></input>
-                        <a href={courses.img} target="_blank" rel="noreferrer">
-                        </a>
-                        <label>New link:</label>
-                        <input name='img' value={courses.img} onChange={handleInfo}></input>
-                    </form>
-                </div> */}
-                    <div className="button-container">
-                        <a href={courses.img} target="_blank" rel="noreferrer">
-                            <button className='img-button'>Go to Course</button>
-                        </a>
-                        <button className='edit-button' onClick={() => setEditing(!isEditing)}>
-                        {isEditing
-                        ? 'Save Information'
-                        : 'Edit Information'
-                        }
-                        </button>
-                    </div>
-            </div>
-        </div>
-    }
+    // } else {
+    //     coursesList = 
+    //     <div key={courses.id}>
+    //         <div className="card-container">
+    //             <div className='form-container'>
+    //                 <form className='cv-form'>
+    //                     <div className="entry">
+    //                         <label>Title: </label>
+    //                         <input name='title' value={courses.title} onChange={handleInfo}></input>
+    //                     </div>
+    //                     <div className="entry">
+    //                         <label>Institution: </label>
+    //                         <input name='institution' value={courses.institution} onChange={handleInfo}></input>
+    //                     </div>
+    //                     <div className="entry">
+    //                         <label>Date: </label>
+    //                         <input name='date' value={courses.date} onChange={handleInfo}></input>
+    //                     </div>
+    //                 </form>
+    //             </div>
+    //             {/* <div className="img-container">
+    //                 <form className='form-container'>
+    //                     <img
+    //                         src={courses.mini}
+    //                         alt={courses.title}
+    //                         style={{ width: 200 }}
+    //                     />
+    //                     <label>New image:</label>
+    //                     <input name='mini' value={courses.mini} onChange={handleInfo}></input>
+    //                     <a href={courses.img} target="_blank" rel="noreferrer">
+    //                     </a>
+    //                     <label>New link:</label>
+    //                     <input name='img' value={courses.img} onChange={handleInfo}></input>
+    //                 </form>
+    //             </div> */}
+    //                 <div className="button-container">
+    //                     <a href={courses.img} target="_blank" rel="noreferrer">
+    //                         <button className='img-button'>Go to Course</button>
+    //                     </a>
+    //                     <button className='edit-button' onClick={() => setEditing(!isEditing)}>
+    //                     {isEditing
+    //                     ? 'Save Information'
+    //                     : 'Edit Information'
+    //                     }
+    //                     </button>
+    //                 </div>
+    //         </div>
+    //     </div>
+    // }
         
-    function handleInfo(e) {
-        setCourses({
-            ...courses,
-            [e.target.name]: e.target.value
-        })
-    };
+    // function handleInfo(e) {
+    //     setCourses({
+    //         ...courses,
+    //         [e.target.name]: e.target.value
+    //     })
+    // };
 
-    function handleEditing() {
-        setEditing(!isEditing);
-    }
+    // function handleEditing() {
+    //     setEditing(!isEditing);
+    // }
     
     return coursesList
 }
